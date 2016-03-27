@@ -27,10 +27,14 @@ var app = express();
 var path = require('path');
 app.set('view engine','ejs');
 app.set('views', __dirname+'/templates');
+// app.set('partials', __dirname+'/templates/partials');
 app.set('/css', __dirname+'/css');
 app.set('/bower_components', __dirname+'/bower_components');
-app.set('/images', __dirname+'/images');
-// app.set('/js', __dirname+'/js');
+// app.set('/images', __dirname+'/images');
+
+
+// app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+// app.set('view engine', 'handlebars');
 
 
 
@@ -47,6 +51,13 @@ app.get('/', function(req, res) {
 });
 
 app.get('/theater', function (req, res) {
-  res.send('theater');
+  res.send('theat');
 });
-app.listen(8080);
+
+// app.get('/templates/code', function (req, res) {
+//   res.send('code');
+// });
+
+app.listen(8080, function(){
+	console.log('Hi There! Head over to port 8080 :)')
+});

@@ -1,12 +1,10 @@
-Kvar gulp = require('gulp'); 
+var gulp = require('gulp'); 
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var webserver = require('gulp-webserver');
-
-
-
+var sassbeautify = require('gulp-sassbeautify');
 
 'use strict';
 
@@ -16,7 +14,7 @@ gulp.task('sass', function () {
   gulp.src('sass/*.scss',{ sourcemap:true, style:'minified'})
    //.pipe(sourcemaps.write())
    .pipe(sass.sync().on('error', sass.logError))
-   .pipe(gulp.dest('hi'));
+   .pipe(gulp.dest('css'));
 });
  
 gulp.task('sass:watch', function () {
@@ -26,15 +24,23 @@ gulp.task('sass:watch', function () {
 
 /* To adjust for vendor prefixing. This takes care of different browser need*/
  
+/* To adjust for vendor prefixing. This takes care of different browser need*/
+ 
 gulp.task('browser-autoprefix', function () {
-  return gulp.src(['hi/*css'])
+  return gulp.src(['css/styles.css', 'css/animations.css'])
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('hi'));
+    .pipe(gulp.dest('css/'));
 });
 
+ 
+gulp.task('beautify-scss', function () {
+  gulp.src('sass/**/*.scss')
+    .pipe(sassbeautify())
+    .pipe(gulp.dest('sass/'))
+})
 
 
 /* To minify the output of javascript files for faster page load*/
@@ -66,6 +72,7 @@ gulp.task('min-css', function() {
 });
 
 
+
 /* To beautify/unminify output files */
 
 
@@ -84,3 +91,13 @@ gulp.task('sass-and-watch', ['sass', 'browser-autoprefix','sass:watch']);
 gulp.task('minify-js',['compress']);
 gulp.task('minify-css',['min-css']);
 gulp.task('start-webserver',['webserver']);
+gulp.task('sass-pretty',['beautify-scss'])
+
+/* For the Forgetfull */
+gulp.task('gulp-commands', function(){
+  var obj = {
+    name: "what",
+    height: "huh"
+  };
+  console.log(obj)
+})
