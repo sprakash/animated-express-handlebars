@@ -26,7 +26,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 app.set('view engine','ejs');
-app.set('views', __dirname+'/templates');
+app.set('views', __dirname+'/views');
 // app.set('partials', __dirname+'/templates/partials');
 app.set('/css', __dirname+'/css');
 app.set('/bower_components', __dirname+'/bower_components');
