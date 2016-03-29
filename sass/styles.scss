@@ -1,14 +1,11 @@
+@import "variables";
 @import "overide";
-
-
-$list: hairwhips geek audrey coding;
-
 
 @each $author in $list {
   .photo-#{$author} {
-    background: url("#{$author}.jpg") no-repeat center center;
+    background: url("../images/#{$author}.jpg") no-repeat center center;
     background-size: cover;
-    z-index: 45
+    z-index: 45;
   }
 }
 
@@ -18,7 +15,8 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  overflow:hidden
+  overflow: hidden;
+  background-color: grey;
 }
 
 @media (min-width: 1200px) {
@@ -26,26 +24,15 @@ html, body {
   overflow-y: hidden;
 }
 
-.hide-photo-filter{display:none; position:relative; top:0;background-color:rgba(0,0,0,0.7); z-index:50; width:100%; height:100%}
-.show-photo-filter{display:block;}
-.newclass {
-  width: 55%;
-}
-
-.navbar .container-fluid{margin-bottom: 10px;
-    border-bottom: 0.5px solid #b9b9b9;}
-
-.tester {
-  width: 20%;
-  background-color: red;
-  height: 20px;
-}
-
-.col-lg-3, .col-lg-12 {
+.home .col-lg-3, .home .col-lg-12 {
   margin: 0;
   padding: 0;
   height: calc(100% + 900px);
   overflow: hidden;
+}
+
+.home .col-lg-3 {
+  height: 100%;
 }
 
 .container {
@@ -57,10 +44,6 @@ html, body {
 .photo, .this-col {
   z-index: 0;
   top: 0px;
-
-  // height:100%;
-  // background-size: calc(100% + 100px);
-  // background-position: relative;
   background-size: cover;
   height: calc(100% + 50px) !important;
   width: calc(100% + 50px);
@@ -76,17 +59,18 @@ html, body {
   transform-style: preserve-3d;
 }
 
-.photo {
+.home .photo {
   animation: frameani 2s ease-in-out infinite alternate;
   overflow: hidden;
   transition: all 1s;
   transition-timing-function: linear;
   transition-delay: 0s;
   top: 0;
+}
 
-  // &:hover{transform: scale(1.3,1.3);
-  //}
-  // animation: ani 2s ease-in-out linear;
+.navbar .container-fluid {
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #b9b9b9;
 }
 
 .navbar {
@@ -111,113 +95,115 @@ html, body {
   }
 }
 
+.picture-title {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 30;
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 0.4em;
+  font-weight: 100;
+  cursor: pointer;
+
+  /*  border-bottom:2px solid $panel_title_color;
+  */
+}
 
 .panel-description {
+  display: none;
   position: absolute;
   z-index: 4;
   width: 300px;
   top: 10px;
   padding-top: 30px;
   margin: 10px;
-/*  background-color: rgba(91, 190, 251, 0.4);*/ /*rgba(255, 255, 255, 0.4);*/
 
-  h1 {
-    width: 100%;
-    height: 30px;
-    line-height: 22px;
-    padding: 3px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    text-align: center;
-    padding: 5px;
-    font-size: 22px;
-    text-transform: uppercase;
-  }
+  /*  background-color: rgba(91, 190, 251, 0.4);*/
+
+  /*rgba(255, 255, 255, 0.4);*/
 
   .description-content {
     padding: 17px 30px 30px 40px;
-    color:black;
-    font-weight:100;
-    letter-spacing: 0.05em
-    
+    color: black;
+    font-weight: 100;
+    letter-spacing: 0.05em;
   }
-}
-
-$panel_title_color: #f6f6f6;
-$titles: film theater music code;
-$panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42, 42, 0.7) rgba(60, 179, 113, 0.7); /* yellow blue red green */
-.picture-title{
-  position:absolute; 
-  top:10px; 
-  left:50px;
-  z-index:30; 
-  text-align: center;
-  font-size: 27px;
-  letter-spacing: 0.4em;
-  font-weight: 100;
-  cursor: pointer;
-/*  border-bottom:2px solid $panel_title_color;
-*/}
-
-
-/* Animation for panels */ 
-
-@for $i from 1 through length($titles) {
-  
-    $item: nth($titles, $i);
-    $pcol: nth($panel-desc-colors, $i);
-  
-  /* Generates animations for cascading tiles */
-
-  .picture-#{$item}{
-    -webkit-animation-delay: (#{$i*0.3s});
-    color: $panel_title_color;   
-  };
-
-  /* Generates difeerent colors for panel descriptions */
-
-  .#{$item}-panel{
-    .panel-description{
-      background-color: $pcol;
-      text-align: left;
-      
-    }
-
-    &:hover{
-      .panel-description{
-        display:block;
-      }
-      .hide-photo-filter{
-        @extend .show-photo-filter
-      }
-    }
-  }
-}
-
-
-.panel-description{
-  display:none;
 
   a.info {
-  display: inline-block;
-  text-decoration: none;
-  padding: 7px 14px;
-  margin-top:20px;
-  background: rgba(0, 0, 0, 0.9);
-  color: #fff;
-  text-transform: uppercase;
-  -webkit-box-shadow: 0 0 1px #000;
-  -moz-box-shadow: 0 0 1px #000;
-  box-shadow: 0 0 1px #000;
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-transform: uppercase;
+
+    /*-webkit-box-shadow: 0 0 1px #000;
+    -moz-box-shadow: 0 0 1px #000;
+    box-shadow: 0 0 1px #000;*/
   }
 }
 
+.hide-photo-filter {
+  display: none;
+  position: relative;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+}
+
+.show-photo-filter {
+  display: block;
+}
+
+/* Animation for panels */
+
+@for $i from 1 through length($titles) {
+  $item: nth($titles, $i);
+  $pcol: nth($panel-desc-colors, $i);
+
+  /* Generates animations for cascading tiles */
+
+  .picture-#{$item} {
+    -webkit-animation-delay: #{$i * 0.3s};
+    -moz-animation-delay: #{$i * 0.3s};
+    animation-delay: #{$i * 0.3s};
+    color: $panel_title_color;
+  }
+
+  /* Generates different colors for panel descriptions */
+
+  .#{$item}-panel {
+    .panel-description {
+      background-color: $pcol;
+      text-align: left;
+    }
+
+    &:hover {
+      .panel-description {
+        display: block;
+      }
+
+      .hide-photo-filter {
+        @extend .show-photo-filter;
+      }
+    }
+  }
+}
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
-    from {top: 0px;}
-    to {top: 200px;}
-} 
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: 200px;
+  }
+}
 
 /* Standard syntax */
 @-webkit-keyframes mymove {
@@ -234,8 +220,8 @@ $panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42,
   -webkit-animation: 4s ease 3 normal;
 
   /* Chrome, Safari, Opera */
-   animation: mymove 5s;
-   -webkit-animation: movearound 4s ease 3 normal;
+  animation: mymove 5s;
+  -webkit-animation: movearound 4s ease 3 normal;
 }
 
 .this-col {
@@ -249,6 +235,8 @@ $panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42,
   -moz-animation: scaleUp 0.8s both ease-in;
   animation: scaleUp 0.8s both ease-in;
 }
+
+.about .photo-about{position:absolute; top:0; height: 600px}
 
 @keyframes pop {
   0% {
@@ -275,7 +263,7 @@ $panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42,
   }
 }
 
-@-moz-keyframes scaleUp {
+/*@-moz-keyframes scaleUp {
   from {
     opacity: 0.2;
     -moz-transform: scale(0.6);
@@ -287,7 +275,7 @@ $panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42,
     opacity: 0.2;
     -webkit-transform: scale(0.6);
   }
-}
+}*/
 
 @keyframes example {
   from {
@@ -298,5 +286,3 @@ $panel-desc-colors: rgba(255, 140, 0, 0.7) rgba(91, 190, 251, 0.7) rgba(165, 42,
     opacity: 1;
   }
 }
-
-

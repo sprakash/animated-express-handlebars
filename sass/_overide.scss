@@ -17,4 +17,12 @@
   background-color: none !important;
 }
 
-.hvr-underline-from-left:before{background:black; text-align: center}
+.navbar .hvr-underline-from-left:before {
+  background: black;
+  text-align: center;
+}
+
+.info.hvr-underline-from-left:before {
+  background-color: $panel_title_color;
+  height: 2.5px;
+}

@@ -1,7 +1,7 @@
 {
-  "name": "Projects-Github",
+  "name": "animated-website-copy",
   "version": "0.0.1",
-  "description": "Code for San Jose Website Node Dependencies",
+  "description": "animated express handlebars website project",
   "repository": {
     "type": "git"
   },
@@ -19,7 +19,14 @@
   "dependencies": {
     "ejs": "^2.4.1",
     "express": "^4.13.4",
+    "express-handlebars": "^3.0.0",
     "express3-handlebars": "^0.5.2",
-    "gulp": "^3.9.1"
-  }
+    "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "license": "ISC"
 }

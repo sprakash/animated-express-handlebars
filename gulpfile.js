@@ -14,7 +14,7 @@ gulp.task('sass', function () {
   gulp.src('sass/*.scss',{ sourcemap:true, style:'minified'})
    //.pipe(sourcemaps.write())
    .pipe(sass.sync().on('error', sass.logError))
-   .pipe(gulp.dest('css'));
+   .pipe(gulp.dest('public/css'));
 });
  
 gulp.task('sass:watch', function () {
@@ -27,12 +27,12 @@ gulp.task('sass:watch', function () {
 /* To adjust for vendor prefixing. This takes care of different browser need*/
  
 gulp.task('browser-autoprefix', function () {
-  return gulp.src(['css/styles.css', 'css/animations.css'])
+  return gulp.src(['public/css/styles.css', 'public/css/animations.css'])
     .pipe(autoprefixer({
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(gulp.dest('css/'));
+    .pipe(gulp.dest('public/css/'));
 });
 
  
