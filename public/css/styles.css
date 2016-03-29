@@ -56,6 +56,9 @@ html, body {
   overflow: hidden;
   background-color: grey; }
 
+body .about {
+  background-color: rgba(233, 150, 122, 0.2); }
+
 @media (min-width: 1200px) {
   overflow: hidden;
   overflow-y: hidden; }
@@ -128,7 +131,7 @@ html, body {
   font-weight: 100;
   cursor: pointer;
   /*  border-bottom:2px solid $panel_title_color;
-*/ }
+  */ }
 
 .panel-description {
   display: none;
@@ -255,10 +258,15 @@ html, body {
   background-size: cover;
   height: 100vh; }
 
-.this-col {
+.this-col, .about {
   -webkit-animation: scaleUp 0.8s both ease-in;
   -moz-animation: scaleUp 0.8s both ease-in;
   animation: scaleUp 0.8s both ease-in; }
+
+.about .photo {
+  position: relative;
+  top: 0;
+  height: 100vh !important; }
 
 @keyframes pop {
   0% {

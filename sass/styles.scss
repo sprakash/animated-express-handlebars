@@ -18,6 +18,7 @@ html, body {
   overflow: hidden;
   background-color: grey;
 }
+body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 @media (min-width: 1200px) {
   overflow: hidden;
@@ -41,7 +42,7 @@ html, body {
   width: 100%;
 }
 
-.photo, .this-col {
+ .photo, .this-col {
   z-index: 0;
   top: 0px;
   background-size: cover;
@@ -59,7 +60,7 @@ html, body {
   transform-style: preserve-3d;
 }
 
-.home .photo {
+ .photo {
   animation: frameani 2s ease-in-out infinite alternate;
   overflow: hidden;
   transition: all 1s;
@@ -230,13 +231,13 @@ html, body {
   height: 100vh;
 }
 
-.this-col {
+.this-col, .about {
   -webkit-animation: scaleUp 0.8s both ease-in;
   -moz-animation: scaleUp 0.8s both ease-in;
   animation: scaleUp 0.8s both ease-in;
 }
 
-.about .photo-about{position:absolute; top:0; height: 600px}
+.about .photo{position:relative; top:0; height: 100vh !important}
 
 @keyframes pop {
   0% {
