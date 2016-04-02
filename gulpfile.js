@@ -91,7 +91,7 @@ gulp.task('sass-and-watch', ['sass', 'browser-autoprefix','sass:watch']);
 gulp.task('minify-js',['compress']);
 gulp.task('minify-css',['min-css']);
 gulp.task('start-webserver',['webserver']);
-gulp.task('sass-pretty',['beautify-scss'])
+gulp.task('sass-pretty',['beautify-scss']);
 
 /* For the Forgetfull */
 gulp.task('gulp-commands', function(){

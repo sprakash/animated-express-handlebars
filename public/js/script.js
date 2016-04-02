@@ -1,4 +1,8 @@
+
 $(function(){
+
+	// console.log(hey);
+
 
 
 	/* Home Page Animations */
@@ -8,7 +12,7 @@ $(function(){
 	var movementStrength = 50;
 	var height = movementStrength / $(window).height();
 	var width = movementStrength / $(window).width();
-	$(".photo, .this-col").mousemove(function(e){
+	$(".photo").mousemove(function(e){
 		var pageX = e.pageX - ($(window).width() / 2);
 		var pageY = e.pageY - ($(window).height() / 2);
 		var newvalueX = width * pageX * -1 - 25;
@@ -55,6 +59,14 @@ $(function(){
 	// });
 	
 
-	
 
+	// var hey = 3;
+	// var func = function(){
+	// 	if(hey==3){
+	// 		var heyhey = 4;
+	// 		console.log(heyhey);
+	// 	}
+	// };
+	// // console.log(hey+ " " + heyhey);
+	// func(); 
 });

@@ -56,6 +56,28 @@ html, body {
   overflow: hidden;
   background-color: grey; }
 
+.navbar .container-fluid {
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #b9b9b9; }
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8); }
+  .navbar h4 {
+    font-size: 24px;
+    padding: 5px; }
+
+.navbar-brand, .navbar-nav {
+  color: black !important;
+  padding: 0px 15px;
+  line-height: 23px; }
+
+.navbar-nav ul li a {
+  padding-left: 100px;
+  background-color: white; }
+
+body.home {
+  background-color: grey; }
+
 body .about {
   background-color: rgba(233, 150, 122, 0.2); }
 
@@ -77,7 +99,7 @@ body .about {
   padding: 0;
   width: 100%; }
 
-.photo, .this-col {
+.photo {
   z-index: 0;
   top: 0px;
   background-size: cover;
@@ -87,12 +109,6 @@ body .about {
   z-index: 3;
   position: absolute; }
 
-.perspective-container {
-  perspective: 20em;
-  overflow: hidden;
-  height: 100%;
-  transform-style: preserve-3d; }
-
 .photo {
   animation: frameani 2s ease-in-out infinite alternate;
   overflow: hidden;
@@ -101,24 +117,11 @@ body .about {
   transition-delay: 0s;
   top: 0; }
 
-.navbar .container-fluid {
-  margin-bottom: 10px;
-  border-bottom: 0.5px solid #b9b9b9; }
-
-.navbar {
-  background-color: rgba(255, 255, 255, 0.8); }
-  .navbar h4 {
-    font-size: 24px;
-    padding: 5px; }
-
-.navbar-brand, .navbar-nav {
-  color: black !important;
-  padding: 0px 15px;
-  line-height: 23px; }
-
-.navbar-nav ul li a {
-  padding-left: 100px;
-  background-color: white; }
+.perspective-container {
+  perspective: 20em;
+  overflow: hidden;
+  height: 100%;
+  transform-style: preserve-3d; }
 
 .picture-title {
   position: absolute;
@@ -181,12 +184,13 @@ body .about {
   color: #f6f6f6; }
 
 /* Generates different colors for panel descriptions */
-.film-panel .panel-description {
-  background-color: rgba(255, 140, 0, 0.7);
-  text-align: left; }
-
-.film-panel:hover .panel-description {
-  display: block; }
+.film-panel {
+  cursor: pointer; }
+  .film-panel .panel-description {
+    background-color: rgba(255, 140, 0, 0.7);
+    text-align: left; }
+  .film-panel:hover .panel-description {
+    display: block; }
 
 /* Generates animations for cascading tiles */
 .picture-theater {
@@ -196,12 +200,13 @@ body .about {
   color: #f6f6f6; }
 
 /* Generates different colors for panel descriptions */
-.theater-panel .panel-description {
-  background-color: rgba(91, 190, 251, 0.7);
-  text-align: left; }
-
-.theater-panel:hover .panel-description {
-  display: block; }
+.theater-panel {
+  cursor: pointer; }
+  .theater-panel .panel-description {
+    background-color: rgba(91, 190, 251, 0.7);
+    text-align: left; }
+  .theater-panel:hover .panel-description {
+    display: block; }
 
 /* Generates animations for cascading tiles */
 .picture-music {
@@ -211,12 +216,13 @@ body .about {
   color: #f6f6f6; }
 
 /* Generates different colors for panel descriptions */
-.music-panel .panel-description {
-  background-color: rgba(165, 42, 42, 0.7);
-  text-align: left; }
-
-.music-panel:hover .panel-description {
-  display: block; }
+.music-panel {
+  cursor: pointer; }
+  .music-panel .panel-description {
+    background-color: rgba(165, 42, 42, 0.7);
+    text-align: left; }
+  .music-panel:hover .panel-description {
+    display: block; }
 
 /* Generates animations for cascading tiles */
 .picture-code {
@@ -226,12 +232,13 @@ body .about {
   color: #f6f6f6; }
 
 /* Generates different colors for panel descriptions */
-.code-panel .panel-description {
-  background-color: rgba(60, 179, 113, 0.7);
-  text-align: left; }
-
-.code-panel:hover .panel-description {
-  display: block; }
+.code-panel {
+  cursor: pointer; }
+  .code-panel .panel-description {
+    background-color: rgba(60, 179, 113, 0.7);
+    text-align: left; }
+  .code-panel:hover .panel-description {
+    display: block; }
 
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
@@ -253,21 +260,19 @@ body .about {
   animation: mymove 5s;
   -webkit-animation: movearound 4s ease 3 normal; }
 
-.this-col {
-  background: url("../images/coding.jpg") no-repeat center center;
-  background-size: cover;
-  height: 100vh; }
-
-.this-col, .about {
+.about-panel {
   -webkit-animation: scaleUp 0.8s both ease-in;
   -moz-animation: scaleUp 0.8s both ease-in;
   animation: scaleUp 0.8s both ease-in; }
 
-.about .photo {
+.about .photo-about {
   position: relative;
   top: 0;
-  height: 100vh !important; }
+  height: 100vh !important;
+  background-size: cover; }
 
+/*.about .about-container{overflow-y: scroll}
+*/
 @keyframes pop {
   0% {
     -webkit-transform: scale(0);
@@ -280,10 +285,56 @@ body .about {
     transform: scale(1); } }
 
 /* scale up */
-@keyframes scaleUp {
-  from {
+/*@keyframes scaleUp {
+  0% {
     opacity: 0.2;
-    transform: scale(0.6); } }
+    transform: scale(1);
+  }
+   100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}*/
+.about-panel {
+  float: right;
+  overflow-x: hidden;
+  overflow: hidden;
+  height: calc(100% + 900px);
+  padding: 0;
+  position: absolute;
+  top: 0;
+  right: 0; }
+
+.about-content {
+  /* or letter-spacing:0.15; -0.01*/
+  float: left;
+  overflow-x: hidden;
+  padding: 20px 0px 20px 50px;
+  color: #424649; }
+  .about-content p, .about-content blockquote {
+    font-size: 13px;
+    line-height: 20px;
+    letter-spacing: 0.07em; }
+  .about-content h1 {
+    line-height: 50px;
+    font-size: 90px;
+    font-weight: 200;
+    letter-spacing: -0.1em;
+    padding-bottom: 35px; }
+
+.Synopsis-highlightLine {
+  width: 52px;
+  height: 4px;
+  background: #424649;
+  margin: 30px 0;
+  opacity: 0.5; }
+
+.Synopsis-highlight {
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  opacity: 0.7;
+  line-height: 25px !important;
+  width: 100%; }
 
 /*@-moz-keyframes scaleUp {
   from {
@@ -303,3 +354,26 @@ body .about {
     opacity: 0; }
   to {
     opacity: 1; } }
+
+.mobile-buttons {
+  display: none;
+  position: absolute;
+  top: 40%;
+  right: 30px; }
+  .mobile-buttons a {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 10px;
+    padding: 5px;
+    line-height: 8px;
+    font-weight: 300;
+    text-decoration: none;
+    cursor: pointer;
+    text-align: center;
+    display: block; }
+
+@media (max-width: 800px) {
+  .photo {
+    width: 100% !important; } }

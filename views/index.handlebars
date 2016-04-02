@@ -2,14 +2,16 @@
   <div class="row animated fadeIn" style="height:100%;">
 
     <!-- Film Panel -->
-    <div class="col col-lg-3 film-panel" >
-      <div class="panel-title text-center">
+    <div class="col col-lg-3 film-panel" id="panelone">
+      <div class="panel-title text-center" data-role="main" class="ui-content">
         <h1 class="picture-title picture-film animated fadeInDown">FILM</h1>
         <div class="panel-description animated fadeInLeft">
           <div class="description-content">
             <p>Is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, of type and scrambled it to make a type specimen book. But also the leap into electronic typesetting, remaining essentially unchanged.</p>
             <p>It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
             <a href="film.ejs" class="info hvr-underline-from-left"> Read More </a>
+
           </div>
         </div>
       </div>
@@ -17,11 +19,15 @@
         <div class="photo photo-hairwhips smart-object"></div>
         <div class="hide-photo-filter animated fadeIn"></div>
       </div>
+      <div class="mobile-buttons">
+        <a href="#paneltwo" data-transition="flip"><</a>
+        <a>></a>
+      </div>
     </div>
 
     <!-- Theater Panel -->
-    <div class="col col-lg-3 theater-panel" >
-      <div class="panel-title">
+    <div class="col col-lg-3 theater-panel" id="paneltwo">
+      <div class="panel-title" data-role="main" class="ui-content">
         <h1 class="picture-title picture-theater animated fadeInDown">THEATER</h1>
         <div class="panel-description animated fadeInLeft">
           <div class="description-content">
