@@ -5,6 +5,7 @@ var uglify = require('gulp-uglify');
 var minifyCss = require('gulp-minify-css');
 var webserver = require('gulp-webserver');
 var sassbeautify = require('gulp-sassbeautify');
+var cssbeautify = require('gulp-cssbeautify');
 
 'use strict';
 
@@ -36,11 +37,11 @@ gulp.task('browser-autoprefix', function () {
 });
 
  
-gulp.task('beautify-scss', function () {
-  gulp.src('sass/**/*.scss')
-    .pipe(sassbeautify())
-    .pipe(gulp.dest('sass/'))
-})
+// gulp.task('css', function () {
+//   return gulp.src('sass/**/*.scss')
+//     .pipe(cssbeautify())
+//     .pipe(gulp.dest('sass/'))
+// });
 
 
 /* To minify the output of javascript files for faster page load*/
@@ -91,7 +92,7 @@ gulp.task('sass-and-watch', ['sass', 'browser-autoprefix','sass:watch']);
 gulp.task('minify-js',['compress']);
 gulp.task('minify-css',['min-css']);
 gulp.task('start-webserver',['webserver']);
-gulp.task('sass-pretty',['beautify-scss']);
+gulp.task('sass-pretty',['css']);
 
 /* For the Forgetfull */
 gulp.task('gulp-commands', function(){
