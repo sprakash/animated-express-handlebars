@@ -240,6 +240,49 @@ body .about {
   .code-panel:hover .panel-description {
     display: block; }
 
+/* Generates animations for cascading tiles */
+.one {
+  -webkit-animation-delay: 0.08s;
+  -moz-animation-delay: 0.08s;
+  animation-delay: 0.08s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+
+/* Generates animations for cascading tiles */
+.two {
+  -webkit-animation-delay: 0.16s;
+  -moz-animation-delay: 0.16s;
+  animation-delay: 0.16s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+
+/* Generates animations for cascading tiles */
+.three {
+  -webkit-animation-delay: 0.24s;
+  -moz-animation-delay: 0.24s;
+  animation-delay: 0.24s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+
+/* Generates animations for cascading tiles */
+.four {
+  -webkit-animation-delay: 0.32s;
+  -moz-animation-delay: 0.32s;
+  animation-delay: 0.32s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+
+/* Generates animations for cascading tiles */
+.five {
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
+
+@keyframes opaque {
+  0% {
+    opacity: 0.2; }
+  50% {
+    opacity: 0.6; }
+  100% {
+    opacity: 1; } }
+
 /* Chrome, Safari, Opera */
 @-webkit-keyframes mymove {
   from {
@@ -261,9 +304,9 @@ body .about {
   -webkit-animation: movearound 4s ease 3 normal; }
 
 .about-panel {
-  -webkit-animation: scaleUp 0.8s both ease-in;
-  -moz-animation: scaleUp 0.8s both ease-in;
-  animation: scaleUp 0.8s both ease-in; }
+  -webkit-animation: opaque 1.2s both ease-in;
+  -moz-animation: opaque 1.2s both ease-in;
+  animation: opaque 1.2s both ease-in; }
 
 .about .photo-about {
   position: relative;
