@@ -211,7 +211,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
  @for $i from 1 through length($content) {
   $item: nth($content, $i);
 
-  /* Generates animations for cascading tiles */
+  /* Generates animations for content to slide in from right */
 
   .#{$item} {
     -webkit-animation-delay: #{$i * 0.08s};
