@@ -1,9 +1,10 @@
 
 $(function(){
 
-	// console.log(hey);
 
-
+	setTimeout(function(){
+		$('body').addClass('loaded');
+	}, 0.03);
 
 	/* Home Page Animations */
 
@@ -58,15 +59,4 @@ $(function(){
 	// 	// })
 	// });
 	
-
-
-	// var hey = 3;
-	// var func = function(){
-	// 	if(hey==3){
-	// 		var heyhey = 4;
-	// 		console.log(heyhey);
-	// 	}
-	// };
-	// // console.log(hey+ " " + heyhey);
-	// func(); 
 });
