@@ -28,12 +28,14 @@ html, body {
 
 .navbar {
   background-color: rgba(255, 255, 255, 0.8);
+  border-top-width: 0;
 
   h4 {
     font-size: 24px;
     padding: 5px;
   }
 }
+
 
 .navbar-brand, .navbar-nav {
   color: black !important;
@@ -44,10 +46,29 @@ html, body {
 .navbar-nav {
   ul li a {
     padding-left: 100px;
-    background-color: white;
+    background-color: transparent !important;
   }
 }
 
+.active{background-color: #ddca92 !important;}
+
+/*$type = about;
+
+@if $type == about {
+    @extend .active;  
+    @debug $type;
+  }
+*/
+
+/*body{
+  .about &{
+
+  background-color:red! important;}
+}*/
+
+/*$type: about-nav;
+
+if*/
 
 body.home{
   background-color: grey;}
@@ -75,6 +96,12 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   margin: 0;
   padding: 0;
   width: 100%;
+}
+
+.code-container {
+  -webkit-animation: 4s ease 3 normal;
+  animation: mymove 5s;
+  -webkit-animation: movearound 4s ease 3 normal;
 }
 
  .photo {
@@ -155,6 +182,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 }
 
 .hide-photo-filter {
+
   display: none;
   position: relative;
   top: 0;
@@ -165,6 +193,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 }
 
 .show-photo-filter {
+
   display: block;
 }
 
@@ -206,7 +235,6 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 }
 
 
-
 /*  About Page animation for content  */
 
  @for $i from 1 through length($content) {
@@ -222,90 +250,20 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 }
 
-@keyframes opaque {
-  0% {
-    opacity: 0.2;
-  }
-
-  50% {
-    opacity: 0.6;
-  }
-
-  100% {
-     opacity: 1;
-  }
-}
-
-@-webkit-keyframes mymove {
-  from {
-    top: 0px;
-  }
-
-  to {
-    top: 200px;
-  }
-}
-
-@-webkit-keyframes mymove {
-  0% {
-    -webkit-transform: scale(0.5) rotate(15deg);
-  }
-
-  100% {
-    -webkit-transform: scale(1) rotate(0deg);
-  }
-}
-
-.code-container {
-  -webkit-animation: 4s ease 3 normal;
-
-  /* Chrome, Safari, Opera */
-  animation: mymove 5s;
-  -webkit-animation: movearound 4s ease 3 normal;
-}
-
-
-
- .about-panel {
+.about-panel {
   -webkit-animation: example 1.2s both ease-in;
   -moz-animation: example 1.2s both ease-in;
   animation: example 1.2s both ease-in;
 }
 
-.about .photo-about{position:relative; top:0; height: 100vh !important; background-size: cover;}
-
-/*.about .about-container{overflow-y: scroll}
-*/@keyframes pop {
-  0% {
-    -webkit-transform: scale(0);
-    transform: scale(0);
-  }
-
-  50% {
-    -webkit-transform: scale(1.2);
-    transform: scale(1.2);
-  }
-
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-  }
+.about .photo-about{
+  position:relative; 
+  top:0; height: 100vh !important; 
+  background-size: cover;
 }
 
-/* scale up */
-/*@keyframes scaleUp {
-  0% {
-    opacity: 0.2;
-    transform: scale(1);
-  }
-   100% {
-    opacity: 1;
-    transform: scale(1.2);
-  }
-}*/
-
-
 .about-panel{
+
   float:right; 
   overflow-x: hidden; 
   overflow:hidden; 
@@ -316,16 +274,29 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 }
 
 .about-content{
-  p, blockquote{font-size:13px;line-height: 20px; letter-spacing: 0.07em;}
-  h1{line-height: 50px; font-size: 90px; font-weight:200;letter-spacing: -0.1em; padding-bottom: 35px; }; /* or letter-spacing:0.15; -0.01*/
+
   float:left;
   overflow-x: hidden; overflow:hidden; 
   padding: 20px 0px 20px 50px;
-  color:#424649
+  color:#424649;
+
+  p, blockquote{
+    font-size:13px;
+    line-height: 20px; 
+    letter-spacing: 0.07em;
+  }
+
+  h1{
+    color:#ddca92; 
+    text-align:center; 
+    line-height: 50px; 
+    font-size: 90px; 
+    font-weight:200;
+    letter-spacing: -0.1em; 
+    padding-bottom: 35px; 
+  } /* or letter-spacing:0.15; -0.01*/
   
 }
-
-
 
 .Synopsis-highlightLine {
     width: 52px;
@@ -335,7 +306,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     opacity:0.5 !important;
 }
 
-  .Synopsis-highlight {
+.Synopsis-highlight {
     font-weight: 700 !important;
     font-size: 15px !important;
     opacity:0.7;
@@ -365,15 +336,31 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     padding-bottom: 100px;
     margin-bottom: 100px; 
     display:none;
-      h4, a{
-        margin-bottom: 5px
-      }
-      p{font-size: 17px; font-weight: 100; color:#b5b5b5; margin-top: 10px; margin-bottom: 0 }
-      a{color: #b09e82; font-size: 16px;}
+
+    h4, a{
+      margin-bottom: 5px
+    }
+
+    p{
+      font-size: 17px; 
+      font-weight: 100; 
+      color:#b5b5b5; 
+      margin-top: 10px; 
+      margin-bottom: 0 
+    }
+
+    a{
+      color: #b09e82; 
+      font-size: 16px;
+    }
   }
 
 }
 
+.about-me{margin: 3% auto;
+  text-align: justify;
+  width: 63%;
+  font-weight: 300;}
 
 
 /* Generates animations for cascading tiles */
@@ -411,10 +398,70 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 }
 
-@-webkit-keyframes scaleUp {
-  from {
+*/
+
+@keyframes opaque {
+  0% {
     opacity: 0.2;
-    -webkit-transform: scale(0.6);
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  100% {
+     opacity: 1;
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: 200px;
+  }
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    -webkit-transform: scale(0.5) rotate(15deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+}
+
+
+/*.about .about-container{overflow-y: scroll}
+*/@keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* scale up */
+/*@keyframes scaleUp {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+   100% {
+    opacity: 1;
+    transform: scale(1.2);
   }
 }*/
 
@@ -428,8 +475,37 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 }
 
-.mobile-buttons{display:none;position: absolute; top:40%; right:30px; a{width:35px; height:35px; border-radius:50%;background-color:rgba(255,255,255,0.6); margin:10px; padding:5px; line-height:8px; font-weight: 300;text-decoration: none;cursor:pointer; text-align:center;display:block;}}
+.mobile-buttons{
+
+  display:none;
+  position: absolute; 
+  top:40%; right:30px; 
+
+  a{
+    width:35px; 
+    height:35px; 
+    border-radius:50%;
+    background-color:rgba(255,255,255,0.6); 
+    margin:10px; 
+    padding:5px; 
+    line-height:8px; 
+    font-weight: 300;
+    text-decoration: none;
+    cursor:pointer; 
+    text-align:center;display:block;
+  }
+}
 
 @media (max-width: 800px) {
-.photo{width:100% !important;}
+  .photo{
+    width:100% !important;
+  }
 } 
+
+
+.navbar-nav {
+  ul li a {
+    padding-left: 100px;
+    background-color: transparent !important;
+  }
+}

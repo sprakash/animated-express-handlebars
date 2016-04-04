@@ -6,6 +6,29 @@ $(function(){
 		$('body').addClass('loaded');
 	}, 0.03);
 
+	// var arr = [ "home", "about" ];
+
+	// $( ".container" ).hasClass("home", function(){
+
+	// }).addClass("active");
+// var object = {
+	
+// }
+// if has class this in the array 
+// 	then navigation bar for this addClass ("active")
+
+	// jQuery.each( arr, function( i, val ) {
+ //  		$(val).addClass("active");
+ //  		console.log(val)
+ 
+ //  		// Will stop running after "three"
+ //  		// return ( val !== "three" );
+	// });
+
+	// $("ul li").click(function(){
+	// 	$(this).addClass("active");
+	// });
+
 	/* Home Page Animations */
 
 	/* panel movement animation --- picture movement animation on home page */
