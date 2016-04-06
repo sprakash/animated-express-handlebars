@@ -1,5 +1,6 @@
 @import "preloader";
 @import "variables";
+@import "mixins";
 @import "overide";
 
 @each $author in $list {
@@ -15,11 +16,15 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow: hidden;
+ @include respond-to(wide-screens){overflow: hidden;
+  overflow-x:hidden; overflow-y:hidden}
+
   background-color: grey
-  
 }
+  
+
+
+.container.home{overflow-x: hidden; overflow:hidden; }
 
 .navbar .container-fluid {
   margin-bottom: 10px;
@@ -35,7 +40,6 @@ html, body {
     padding: 5px;
   }
 }
-
 
 .navbar-brand, .navbar-nav {
   color: black !important;
@@ -70,15 +74,13 @@ html, body {
 
 if*/
 
-body.home{
-  background-color: grey;}
 
 body .about{background-color: rgba(233, 150, 122, 0.2)}
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   overflow: hidden;
   overflow-y: hidden;
-}
+}*/
 
 
 .home .col-lg-3, .home .col-lg-12 {
@@ -126,8 +128,9 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .perspective-container {
   perspective: 20em;
-  overflow: hidden;
-  height: 100%;
+  @include respond-to(wide-screens){  overflow: hidden;
+}
+ height: 100%;
   transform-style: preserve-3d;
 }
 
@@ -195,6 +198,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 .show-photo-filter {
 
   display: block;
+ /* width:100%;
+  height:100%;*/
 }
 
 /* Home Page Animation for panels */
@@ -250,6 +255,16 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 }
 
+.container.about{
+  background-color:white;
+  @include respond-to(wide-screens){ 
+    overflow-x: hidden; 
+    overflow-y: auto;
+    height: 100vh;
+  } 
+ 
+  padding-bottom:100px}
+
 .about-panel {
   -webkit-animation: example 1.2s both ease-in;
   -moz-animation: example 1.2s both ease-in;
@@ -264,20 +279,25 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .about-panel{
 
-  float:right; 
   overflow-x: hidden; 
   overflow:hidden; 
   height: calc(100% + 900px);
   padding: 0;
-  position: absolute; top:0;right:0;
+/*  position: absolute; top:0;right:0;
+*/
+@include respond-to(wide-screens){
+    position: absolute; top:0;right:0;
+    float:right; 
+    padding-left:50px;
 
+}
 }
 
 .about-content{
 
   float:left;
   overflow-x: hidden; overflow:hidden; 
-  padding: 20px 0px 20px 50px;
+  @include respond-to(wide-screens){padding: 20px 0px 20px 50px;}
   color:#424649;
 
   p, blockquote{
@@ -287,6 +307,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 
   h1{
+    z-index:-1;
     color:#ddca92; 
     text-align:center; 
     line-height: 50px; 
@@ -317,7 +338,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 .about-info{
 
   position: absolute;
-  z-index: 100;
+  z-index: 100100;
   top:50%;
   color: white;
   text-align: center;
@@ -500,8 +521,11 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   .photo{
     width:100% !important;
   }
-} 
+}
 
+ 
+/*.about{ @include respond-to(handhelds){overflow-x: scroll; overflow-y:scroll !important; overflow:scroll !important;}}
+*/
 
 .navbar-nav {
   ul li a {

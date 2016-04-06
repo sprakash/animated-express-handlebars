@@ -206,9 +206,16 @@ html, body {
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
-  overflow: hidden;
   background-color: grey; }
+  @media only screen and (min-width: 1199px) {
+    html, body {
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden; } }
+
+.container.home {
+  overflow-x: hidden;
+  overflow: hidden; }
 
 .navbar .container-fluid {
   margin-bottom: 10px;
@@ -248,16 +255,13 @@ html, body {
 /*$type: about-nav;
 
 if*/
-body.home {
-  background-color: grey; }
-
 body .about {
   background-color: rgba(233, 150, 122, 0.2); }
 
-@media (min-width: 1200px) {
+/*@media (min-width: 1200px) {
   overflow: hidden;
-  overflow-y: hidden; }
-
+  overflow-y: hidden;
+}*/
 .home .col-lg-3, .home .col-lg-12 {
   margin: 0;
   padding: 0;
@@ -297,9 +301,11 @@ body .about {
 
 .perspective-container {
   perspective: 20em;
-  overflow: hidden;
   height: 100%;
   transform-style: preserve-3d; }
+  @media only screen and (min-width: 1199px) {
+    .perspective-container {
+      overflow: hidden; } }
 
 .picture-title {
   position: absolute;
@@ -351,7 +357,9 @@ body .about {
   height: 100%; }
 
 .show-photo-filter, .film-panel:hover .hide-photo-filter, .theater-panel:hover .hide-photo-filter, .music-panel:hover .hide-photo-filter, .code-panel:hover .hide-photo-filter, .about-panel:hover .hide-photo-filter {
-  display: block; }
+  display: block;
+  /* width:100%;
+  height:100%;*/ }
 
 /* Home Page Animation for panels */
 /* Generates animations for cascading tiles */
@@ -454,6 +462,15 @@ body .about {
   animation-delay: 0.4s;
   transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1); }
 
+.container.about {
+  background-color: white;
+  padding-bottom: 100px; }
+  @media only screen and (min-width: 1199px) {
+    .container.about {
+      overflow-x: hidden;
+      overflow-y: auto;
+      height: 100vh; } }
+
 .about-panel {
   -webkit-animation: example 1.2s both ease-in;
   -moz-animation: example 1.2s both ease-in;
@@ -466,27 +483,35 @@ body .about {
   background-size: cover; }
 
 .about-panel {
-  float: right;
   overflow-x: hidden;
   overflow: hidden;
   height: calc(100% + 900px);
   padding: 0;
-  position: absolute;
-  top: 0;
-  right: 0; }
+  /*  position: absolute; top:0;right:0;
+*/ }
+  @media only screen and (min-width: 1199px) {
+    .about-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      float: right;
+      padding-left: 50px; } }
 
 .about-content {
   float: left;
   overflow-x: hidden;
   overflow: hidden;
-  padding: 20px 0px 20px 50px;
   color: #424649;
   /* or letter-spacing:0.15; -0.01*/ }
+  @media only screen and (min-width: 1199px) {
+    .about-content {
+      padding: 20px 0px 20px 50px; } }
   .about-content p, .about-content blockquote {
     font-size: 13px;
     line-height: 20px;
     letter-spacing: 0.07em; }
   .about-content h1 {
+    z-index: -1;
     color: #ddca92;
     text-align: center;
     line-height: 50px;
@@ -511,7 +536,7 @@ body .about {
 
 .about-info {
   position: absolute;
-  z-index: 100;
+  z-index: 100100;
   top: 50%;
   color: white;
   text-align: center;
@@ -657,6 +682,8 @@ body .about {
   .photo {
     width: 100% !important; } }
 
+/*.about{ @include respond-to(handhelds){overflow-x: scroll; overflow-y:scroll !important; overflow:scroll !important;}}
+*/
 .navbar-nav ul li a {
   padding-left: 100px;
   background-color: transparent !important; }
