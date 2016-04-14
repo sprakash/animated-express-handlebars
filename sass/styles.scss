@@ -21,6 +21,8 @@ html, body {
 
   background-color: grey
 }
+
+
   
 .row{margin:0;}
 
@@ -157,7 +159,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   top: 10px;
   padding-top: 30px;
   margin: 10px;
-
+  p{color:#ddd;}
   /*  background-color: rgba(91, 190, 251, 0.4);*/
 
   /*rgba(255, 255, 255, 0.4);*/
@@ -283,6 +285,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   overflow:hidden; 
   height: calc(100% + 900px);
   padding: 0;
+
 /*  position: absolute; top:0;right:0;
 */
 @include respond-to(wide-screens){
@@ -296,7 +299,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 .about-content{
 
   float:left;
-  overflow-x: hidden; overflow:hidden; 
+  overflow-x: hidden; overflow:hidden;
+  padding-top:30px;
   @include respond-to(wide-screens){padding: 20px 0px 20px 50px;}
   color:#424649;
 
@@ -344,19 +348,20 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   text-align: center;
   width: 100%;
 
+
   h3{
     width: 100%; 
     font-size: 30px; 
     text-decoration: underline; 
     letter-spacing: 0.4em; 
-    font-weight:300;
+    font-weight:500;
   }
 
   .about-info-contact{
     margin-top: 25px; 
     padding-bottom: 100px;
     margin-bottom: 100px; 
-    display:none;
+    @include respond-to(wide-screens){display:none;}
 
     h4, a{
       margin-bottom: 5px
@@ -381,7 +386,11 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 .about-me{margin: 3% auto;
   text-align: justify;
   font-weight: 300;
+  p{line-height: 23px}
+  row{height:100vh}
   @include respond-to(wide-screens){width: 63%;}
+
+
 }
 
 
@@ -390,6 +399,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 .about-panel{
   @for $i from 1 through length($moveup) {
   $item: nth($moveup, $i);
+  height: 100%;
 
     &:hover{
 
@@ -504,21 +514,23 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .mobile-buttons{
 
-  display:none;
+  @include respond-to(wide-screens){display:none}
   position: absolute; 
-  top:40%; right:30px; 
+  top:40%; right:15px; 
 
   a{
     width:35px; 
     height:35px; 
     border-radius:50%;
-    background-color:rgba(255,255,255,0.6); 
+    background-color:rgba(255,255,255,0.2);
     margin:10px; 
-    padding:5px; 
-    line-height:8px; 
-    font-weight: 300;
+/*    padding:5px; 
+*/    line-height:35px; 
+
+    color:white;
     text-decoration: none;
     cursor:pointer; 
+    font-weight:100;
     text-align:center;display:block;
   }
 }

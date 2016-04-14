@@ -333,6 +333,8 @@ body .about {
   margin: 10px;
   /*  background-color: rgba(91, 190, 251, 0.4);*/
   /*rgba(255, 255, 255, 0.4);*/ }
+  .panel-description p {
+    color: #ddd; }
   .panel-description .description-content {
     padding: 17px 30px 30px 40px;
     color: black;
@@ -506,6 +508,7 @@ body .about {
   float: left;
   overflow-x: hidden;
   overflow: hidden;
+  padding-top: 30px;
   color: #424649;
   /* or letter-spacing:0.15; -0.01*/ }
   @media only screen and (min-width: 1199px) {
@@ -551,12 +554,14 @@ body .about {
     font-size: 30px;
     text-decoration: underline;
     letter-spacing: 0.4em;
-    font-weight: 300; }
+    font-weight: 500; }
   .about-info .about-info-contact {
     margin-top: 25px;
     padding-bottom: 100px;
-    margin-bottom: 100px;
-    display: none; }
+    margin-bottom: 100px; }
+    @media only screen and (min-width: 1199px) {
+      .about-info .about-info-contact {
+        display: none; } }
     .about-info .about-info-contact h4, .about-info .about-info-contact a {
       margin-bottom: 5px; }
     .about-info .about-info-contact p {
@@ -573,40 +578,43 @@ body .about {
   margin: 3% auto;
   text-align: justify;
   font-weight: 300; }
+  .about-me p {
+    line-height: 23px; }
+  .about-me row {
+    height: 100vh; }
   @media only screen and (min-width: 1199px) {
     .about-me {
       width: 63%; } }
 
 /* Generates animations for cascading tiles */
-.about-panel:hover .about-info-contact {
-  display: block; }
-
-.about-panel:hover .about-info-contact .up-two {
-  -webkit-animation-delay: 0.08s;
-  -moz-animation-delay: 0.08s;
-  animation-delay: 0.08s;
-  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-  display: block; }
-
-.about-panel:hover .about-info-contact {
-  display: block; }
-
-.about-panel:hover .about-info-contact .up-three {
-  -webkit-animation-delay: 0.16s;
-  -moz-animation-delay: 0.16s;
-  animation-delay: 0.16s;
-  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-  display: block; }
-
-.about-panel:hover .about-info-contact {
-  display: block; }
-
-.about-panel:hover .about-info-contact .up-four {
-  -webkit-animation-delay: 0.24s;
-  -moz-animation-delay: 0.24s;
-  animation-delay: 0.24s;
-  transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
-  display: block; }
+.about-panel {
+  height: 100%;
+  height: 100%;
+  height: 100%; }
+  .about-panel:hover .about-info-contact {
+    display: block; }
+  .about-panel:hover .about-info-contact .up-two {
+    -webkit-animation-delay: 0.08s;
+    -moz-animation-delay: 0.08s;
+    animation-delay: 0.08s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    display: block; }
+  .about-panel:hover .about-info-contact {
+    display: block; }
+  .about-panel:hover .about-info-contact .up-three {
+    -webkit-animation-delay: 0.16s;
+    -moz-animation-delay: 0.16s;
+    animation-delay: 0.16s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    display: block; }
+  .about-panel:hover .about-info-contact {
+    display: block; }
+  .about-panel:hover .about-info-contact .up-four {
+    -webkit-animation-delay: 0.24s;
+    -moz-animation-delay: 0.24s;
+    animation-delay: 0.24s;
+    transition-timing-function: cubic-bezier(0.42, 0, 0.58, 1);
+    display: block; }
 
 /*@-moz-keyframes scaleUp {
   from {
@@ -674,21 +682,25 @@ body .about {
     opacity: 1; } }
 
 .mobile-buttons {
-  display: none;
   position: absolute;
   top: 40%;
-  right: 30px; }
+  right: 15px; }
+  @media only screen and (min-width: 1199px) {
+    .mobile-buttons {
+      display: none; } }
   .mobile-buttons a {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
     margin: 10px;
-    padding: 5px;
-    line-height: 8px;
-    font-weight: 300;
+    /*    padding:5px; 
+*/
+    line-height: 35px;
+    color: white;
     text-decoration: none;
     cursor: pointer;
+    font-weight: 100;
     text-align: center;
     display: block; }
 
