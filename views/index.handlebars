@@ -3,8 +3,8 @@
   <div class="row animated fadeIn" style="height:100%;">
 
     <!-- Film Panel -->
-    <div class="col col-lg-3 film-panel" id="panelone">
-      <div class="panel-title text-center" data-role="main" class="ui-content">
+    <div class="col col-lg-3 film-panel ui-content" id="panelone">
+      <div class="panel-title text-center" data-role="main">
         <h1 class="picture-title picture-film animated fadeInDown">FILM</h1>
         <div class="panel-description animated fadeInLeft">
           <div class="description-content">
@@ -21,15 +21,20 @@
         <div class="hide-photo-filter animated fadeIn"></div>
       </div>
       <div class="mobile-buttons">
-        >>>
-        <a href="#paneltwo" data-transition="flip">></a>
-        <a><</a>
+        <a class="next" href="#paneltwo" data-transition="flip">
+          <span></span>
+          <span></span>
+        </a>
+        <a class="previous">
+          <span></span>
+          <span></span>
+        </a>
       </div>
     </div>
 
     <!-- Theater Panel -->
-    <div class="col col-lg-3 theater-panel" id="paneltwo">
-      <div class="panel-title" data-role="main" class="ui-content">
+    <div class="col col-lg-3 theater-panel ui-content" id="paneltwo">
+      <div class="panel-title" data-role="main">
         <h1 class="picture-title picture-theater animated fadeInDown">THEATER</h1>
         <div class="panel-description animated fadeInLeft">
           <div class="description-content">

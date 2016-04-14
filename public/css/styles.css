@@ -710,20 +710,43 @@ body .about {
     .mobile-buttons {
       display: none; } }
   .mobile-buttons a {
-    width: 35px;
-    height: 35px;
+    width: 46px;
+    height: 46px;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.2);
     margin: 10px;
     /*    padding:5px; 
 */
-    line-height: 35px;
+    /* line-height:40px; */
+    font-weight: 600;
     color: white;
     text-decoration: none;
     cursor: pointer;
-    font-weight: 100;
     text-align: center;
     display: block; }
+
+.mobile-buttons a span {
+  display: block;
+  width: 15px;
+  background-color: white;
+  height: 1px;
+  position: relative;
+  margin: 0 auto; }
+
+.next span:nth-of-type(1), .previous span:nth-of-type(1) {
+  -ms-transform: rotate(40deg);
+  -webkit-transform: rotate(40deg);
+  transform: rotate(40deg);
+  top: 16px; }
+
+.next span:nth-of-type(2), .previous span:nth-of-type(2) {
+  -ms-transform: rotate(40deg);
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  top: 25px; }
+
+.previous {
+  transform: scale(-1); }
 
 /*@media (max-width: 800px) {
   .photo{
