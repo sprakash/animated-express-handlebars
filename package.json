@@ -24,6 +24,7 @@
     "express3-handlebars": "^0.5.2",
     "gulp": "^3.9.1",
     "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
     "hbs": "^4.0.0"
   },
   "scripts": {

@@ -6,15 +6,19 @@ var minifyCss = require('gulp-minify-css');
 var webserver = require('gulp-webserver');
 var sassbeautify = require('gulp-sassbeautify');
 var cssbeautify = require('gulp-cssbeautify');
+var sourcemaps = require('gulp-sourcemaps');
+
 
 'use strict';
 
 /* To compile .scss files into css and watch for further changes */ 
 
 gulp.task('sass', function () {
-  gulp.src('sass/*.scss',{ sourcemap:true, style:'minified'})
+  gulp.src('sass/*.scss')
    //.pipe(sourcemaps.write())
+  .pipe(sourcemaps.init())
    .pipe(sass.sync().on('error', sass.logError))
+   .pipe(sourcemaps.write('maps'))
    .pipe(gulp.dest('public/css'));
 });
  
@@ -27,14 +31,14 @@ gulp.task('sass:watch', function () {
  
 /* To adjust for vendor prefixing. This takes care of different browser need*/
  
-gulp.task('browser-autoprefix', function () {
-  return gulp.src(['public/css/styles.css', 'public/css/animations.css'])
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false
-    }))
-    .pipe(gulp.dest('public/css/'));
-});
+// gulp.task('browser-autoprefix', function () {
+//   return gulp.src(['public/css/styles.css', 'public/css/animations.css'])
+//     .pipe(autoprefixer({
+//       browsers: ['last 2 versions'],
+//       cascade: false
+//     }))
+//     .pipe(gulp.dest('public/css/'));
+// });
 
  
 // gulp.task('css', function () {
@@ -88,7 +92,7 @@ gulp.task('min-css', function() {
 to do what you want to do. For ex. gulp sass-and-watch */
 
 // To compile, browserprefix and watch  sass files
-gulp.task('sass-and-watch', ['sass', 'browser-autoprefix','sass:watch']);
+gulp.task('sass-and-watch', ['sass','sass:watch']);
 gulp.task('minify-js',['compress']);
 gulp.task('minify-css',['min-css']);
 gulp.task('start-webserver',['webserver']);

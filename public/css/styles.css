@@ -349,6 +349,7 @@ body .about {
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
+    font-weight: 200;
     margin-top: 20px;
     background: rgba(0, 0, 0, 0.9);
     color: #fff;
@@ -733,3 +734,5 @@ body .about {
 .navbar-nav ul li a {
   padding-left: 100px;
   background-color: transparent !important; }
+
+/*# sourceMappingURL=maps/styles.css.map */
