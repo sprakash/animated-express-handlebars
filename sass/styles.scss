@@ -197,7 +197,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .show-photo-filter {
 
-  display: block;
+  @include respond-to(wide-screens){display: block;}
  /* width:100%;
   height:100%;*/
 }
@@ -380,8 +380,9 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .about-me{margin: 3% auto;
   text-align: justify;
-  width: 63%;
-  font-weight: 300;}
+  font-weight: 300;
+  @include respond-to(wide-screens){width: 63%;}
+}
 
 
 /* Generates animations for cascading tiles */
@@ -421,17 +422,22 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 */
 
-@keyframes opaque {
+/*p:hover{animation: opaque 2s reverse}
+*/
+@keyframes opaqu {
   0% {
-    opacity: 0.2;
+/*    opacity: 0.2;
+*/    color: black;
   }
 
   50% {
     opacity: 0.6;
+    color:grey;
   }
 
   100% {
-     opacity: 1;
+/*     opacity: 1;
+*/     color: green;
   }
 }
 
@@ -533,3 +539,5 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     background-color: transparent !important;
   }
 }
+
+
