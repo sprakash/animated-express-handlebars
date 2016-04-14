@@ -516,7 +516,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
   @include respond-to(wide-screens){display:none}
   position: absolute; 
-  top:40%; right:15px; 
+  top:40%; left:100px; 
 
   a{
     width:35px; 

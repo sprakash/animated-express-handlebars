@@ -684,7 +684,7 @@ body .about {
 .mobile-buttons {
   position: absolute;
   top: 40%;
-  right: 15px; }
+  left: 100px; }
   @media only screen and (min-width: 1199px) {
     .mobile-buttons {
       display: none; } }
