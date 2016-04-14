@@ -561,6 +561,8 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
 }
 .previous{
   @extend .next;
+  -ms-transform: scale(-1); 
+  -webkit-transform: scale(-1);
   transform: scale(-1)
 }
 

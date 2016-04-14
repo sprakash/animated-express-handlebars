@@ -746,6 +746,8 @@ body .about {
   top: 25px; }
 
 .previous {
+  -ms-transform: scale(-1);
+  -webkit-transform: scale(-1);
   transform: scale(-1); }
 
 /*@media (max-width: 800px) {
