@@ -335,6 +335,11 @@ body .about {
   /*rgba(255, 255, 255, 0.4);*/ }
   .panel-description p {
     color: #ddd; }
+  @media only screen and (max-width: 450px) {
+    .panel-description {
+      width: 70%;
+      height: 80%;
+      font-size: 80%; } }
   .panel-description .description-content {
     padding: 17px 30px 30px 40px;
     color: black;
@@ -382,6 +387,9 @@ body .about {
   .film-panel .panel-description {
     background-color: rgba(255, 140, 0, 0.7);
     text-align: left; }
+    @media only screen and (max-width: 450px) {
+      .film-panel .panel-description p {
+        font-weight: 300; } }
   .film-panel:hover .panel-description {
     display: block; }
 
@@ -398,6 +406,9 @@ body .about {
   .theater-panel .panel-description {
     background-color: rgba(91, 190, 251, 0.7);
     text-align: left; }
+    @media only screen and (max-width: 450px) {
+      .theater-panel .panel-description p {
+        font-weight: 300; } }
   .theater-panel:hover .panel-description {
     display: block; }
 
@@ -414,6 +425,9 @@ body .about {
   .music-panel .panel-description {
     background-color: rgba(165, 42, 42, 0.7);
     text-align: left; }
+    @media only screen and (max-width: 450px) {
+      .music-panel .panel-description p {
+        font-weight: 300; } }
   .music-panel:hover .panel-description {
     display: block; }
 
@@ -430,6 +444,9 @@ body .about {
   .code-panel .panel-description {
     background-color: rgba(60, 179, 113, 0.7);
     text-align: left; }
+    @media only screen and (max-width: 450px) {
+      .code-panel .panel-description p {
+        font-weight: 300; } }
   .code-panel:hover .panel-description {
     display: block; }
 
@@ -526,7 +543,8 @@ body .about {
     font-size: 90px;
     font-weight: 200;
     letter-spacing: -0.1em;
-    padding-bottom: 35px; }
+    padding-bottom: 35px;
+    width: 95%; }
 
 .Synopsis-highlightLine {
   width: 52px;
@@ -552,13 +570,14 @@ body .about {
   .about-info h3 {
     width: 100%;
     font-size: 30px;
-    text-decoration: underline;
+    border-bottom: 4px solid white;
     letter-spacing: 0.4em;
     font-weight: 500; }
   .about-info .about-info-contact {
     margin-top: 25px;
     padding-bottom: 100px;
-    margin-bottom: 100px; }
+    margin-bottom: 100px;
+    height: 130px; }
     @media only screen and (min-width: 1199px) {
       .about-info .about-info-contact {
         display: none; } }
@@ -684,7 +703,7 @@ body .about {
 .mobile-buttons {
   position: absolute;
   top: 40%;
-  left: 100px; }
+  right: 15px; }
   @media only screen and (min-width: 1199px) {
     .mobile-buttons {
       display: none; } }
@@ -704,10 +723,11 @@ body .about {
     text-align: center;
     display: block; }
 
-@media (max-width: 800px) {
-  .photo {
-    width: 100% !important; } }
-
+/*@media (max-width: 800px) {
+  .photo{
+    width:100% !important;
+  }
+}*/
 /*.about{ @include respond-to(handhelds){overflow-x: scroll; overflow-y:scroll !important; overflow:scroll !important;}}
 */
 .navbar-nav ul li a {

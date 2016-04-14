@@ -156,6 +156,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   position: absolute;
   z-index: 4;
   width: 300px;
+
   top: 10px;
   padding-top: 30px;
   margin: 10px;
@@ -163,7 +164,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   /*  background-color: rgba(91, 190, 251, 0.4);*/
 
   /*rgba(255, 255, 255, 0.4);*/
-
+  @include respond-to(handhelds){width: 70%;
+    height: 80%; font-size: 80%;}
   .description-content {
     padding: 17px 30px 30px 40px;
     color: black;
@@ -226,6 +228,9 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     .panel-description {
       background-color: $pcol;
       text-align: left;
+      p{
+        @include respond-to(handhelds){font-weight: 300}
+      }
     }
 
     &:hover {
@@ -319,6 +324,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     font-weight:200;
     letter-spacing: -0.1em; 
     padding-bottom: 35px; 
+    width: 95%;
   } /* or letter-spacing:0.15; -0.01*/
   
 }
@@ -352,8 +358,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   h3{
     width: 100%; 
     font-size: 30px; 
-    text-decoration: underline; 
-    letter-spacing: 0.4em; 
+border-bottom:4px solid white;    letter-spacing: 0.4em; 
     font-weight:500;
   }
 
@@ -361,6 +366,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     margin-top: 25px; 
     padding-bottom: 100px;
     margin-bottom: 100px; 
+    height: 130px;
     @include respond-to(wide-screens){display:none;}
 
     h4, a{
@@ -516,7 +522,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
   @include respond-to(wide-screens){display:none}
   position: absolute; 
-  top:40%; left:100px; 
+  top:40%; right:15px; 
 
   a{
     width:35px; 
@@ -535,11 +541,11 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
 }
 
-@media (max-width: 800px) {
+/*@media (max-width: 800px) {
   .photo{
     width:100% !important;
   }
-}
+}*/
 
  
 /*.about{ @include respond-to(handhelds){overflow-x: scroll; overflow-y:scroll !important; overflow:scroll !important;}}
