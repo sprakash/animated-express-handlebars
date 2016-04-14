@@ -525,6 +525,7 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
   @include respond-to(wide-screens){display:none}
   position: absolute; 
   top:40%; right:15px; 
+  z-index:33333;
 
   a{
     width:35px; 
