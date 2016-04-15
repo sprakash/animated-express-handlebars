@@ -391,6 +391,9 @@ body .about {
     @media only screen and (max-width: 450px) {
       .film-panel .panel-description p {
         font-weight: 300; } }
+  @media only screen and (max-width: 450px) {
+    .film-panel .panel-description {
+      display: block; } }
   .film-panel:hover .panel-description {
     display: block; }
 
@@ -410,6 +413,9 @@ body .about {
     @media only screen and (max-width: 450px) {
       .theater-panel .panel-description p {
         font-weight: 300; } }
+  @media only screen and (max-width: 450px) {
+    .theater-panel .panel-description {
+      display: block; } }
   .theater-panel:hover .panel-description {
     display: block; }
 
@@ -429,6 +435,9 @@ body .about {
     @media only screen and (max-width: 450px) {
       .music-panel .panel-description p {
         font-weight: 300; } }
+  @media only screen and (max-width: 450px) {
+    .music-panel .panel-description {
+      display: block; } }
   .music-panel:hover .panel-description {
     display: block; }
 
@@ -448,6 +457,9 @@ body .about {
     @media only screen and (max-width: 450px) {
       .code-panel .panel-description p {
         font-weight: 300; } }
+  @media only screen and (max-width: 450px) {
+    .code-panel .panel-description {
+      display: block; } }
   .code-panel:hover .panel-description {
     display: block; }
 

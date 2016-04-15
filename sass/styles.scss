@@ -235,6 +235,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
       }
     }
 
+    @include respond-to(handhelds){.panel-description{display:block}}
+
     &:hover {
       .panel-description {
         display: block;

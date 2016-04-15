@@ -4,7 +4,7 @@ $(function(){
 
 	setTimeout(function(){
 		$('body').addClass('loaded');
-	}, 0.03);
+	}, 3);
 
 	// var arr = [ "home", "about" ];
 
