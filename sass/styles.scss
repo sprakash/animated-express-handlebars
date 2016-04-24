@@ -1,16 +1,32 @@
+@import "compass/css3";
+@import "filmslide";
 @import "preloader";
 @import "variables";
 @import "mixins";
 @import "overide";
+@import "menu/styletwo";
+@import "slideMenu/component";
+/*@import "slideMenu/default";
+*/
 
 @each $author in $list {
   .photo-#{$author} {
     background: url("../images/#{$author}.jpg") no-repeat center center;
     background-size: cover;
     z-index: 45;
+     @include color-interpolation-filters( linearRGB);
+
   }
 }
 
+/*p{background-color: black !important}
+*/
+.thiso {
+  @include border-bottom-left-radius(25px);
+  background-color: red; 
+  width:50px; 
+  height: 50px
+}
 html, body {
   height: 100%;
   width: 100%;
@@ -19,10 +35,12 @@ html, body {
  @include respond-to(wide-screens){overflow: hidden;
   overflow-x:hidden; overflow-y:hidden}
 
-  background-color: grey
+  background-color: grey;
+  min-width:350px
 }
 
-
+.container.music { background-color: red
+}
   
 .row{margin:0;}
 
@@ -169,11 +187,11 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     height: 80%; font-size: 80%;}
   .description-content {
     padding: 17px 30px 30px 40px;
-    color: black;
-    font-weight: 100;
+/*    color: black;
+*/    font-weight: 100;
     letter-spacing: 0.05em;
+    text-shadow: none !important;
   }
-
   a.info {
     display: inline-block;
     text-decoration: none;
@@ -207,6 +225,13 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
  /* width:100%;
   height:100%;*/
 }
+
+.activ {
+    -webkit-animation-delay: 0.3s;
+    -moz-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    color: $panel_title_color;
+  }
 
 /* Home Page Animation for panels */
 
@@ -249,8 +274,24 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     }
   }
 }
-
-
+/*.scrollbar{
+    cursor:n-resize;
+    position:absolute;
+    overflow:auto;
+    top:0px;
+    right:0px;
+    z-index:2;
+    background:#444;
+    width:17px;
+    border-radius:8px;
+}
+.scrollable{
+    overflow-y:scroll;
+    position:absolute;
+    padding:0 17px 0 0;
+    width: 180px;
+    height:100%;
+}*/
 /*  About Page animation for content  */
 
  @for $i from 1 through length($content) {
@@ -310,6 +351,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   float:left;
   overflow-x: hidden; overflow:hidden;
   padding-top:30px;
+  @include respond-to(handhelds){padding-left:40px; padding-right: 40px}
   @include respond-to(wide-screens){padding: 20px 0px 20px 50px;}
   color:#424649;
 
@@ -374,7 +416,8 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
     @include respond-to(wide-screens){display:none;}
 
     h4, a{
-      margin-bottom: 5px
+      margin-bottom: 5px;
+      font-weight:300
     }
 
     p{
@@ -535,6 +578,8 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
     border-radius:50%;
     background-color:rgba(255,255,255,0.2);
     margin:10px; 
+box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
+
 /*    padding:5px; 
 */   /* line-height:40px; */font-weight: 600;
 
@@ -586,4 +631,9 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
   }
 }
 
+.navbar-right{
+  display:none !important;
+   @include respond-to(wide-screens){display:block !important;}
+}
 
+.mobile-nav ul li{float:none !important;}

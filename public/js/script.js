@@ -43,13 +43,36 @@ $(function(){
 			var pageY = e.pageY - ($(window).height() / 2);
 			var newvalueX = width * pageX * -1 - 25;
 			var newvalueY = height * pageY * -1 - 25;
+			// $(this).css("transform","translate("+ newvalueX+"px, " +newvalueY+"px)");
 			$(this).css("transform","translate("+ newvalueX+"px, " +newvalueY+"px)");
+			// $(this).css({"transform":"matrix(1 2 3 "+ newvalueX+" "+newvalueY, "-moz-transform":"matrix(1 2 3 "+ newvalueX+" "+newvalueY});
+
 			$(this).css("background-size", "cover");
 		};
 		});
 	
 
+		// $(".next").click(function(){
+		// 	$(".panel-description").css("display","block");
+		// });
 
+// 		var $scrollable = $('.scrollable'),
+//     $scrollbar  = $('.scrollbar'),
+//     H   = $scrollable.outerHeight(true),
+//     sH  = $scrollable[0].scrollHeight,
+//     sbH = H*H/sH;
+
+//  $('.scrollbar').height( sbH ).draggable({
+//     axis : 'y',
+// 	 containment : 'parent', 
+// 	  drag: function(e, ui) {
+// 			$scrollable.scrollTop( sH/H*ui.position.top  );
+//     }
+// }); 
+ 
+// $scrollable.on("scroll", function(){
+// 	$scrollbar.css({top: $scrollable.scrollTop()/H*sbH });
+// });
 	
 	// $(".col").click(function(e){
 	// 	$(".col").not(this).removeClass("intro");
@@ -85,10 +108,27 @@ $(function(){
 	// 	// })
 	// });
 
+	// var slideout = new Slideout({
+ //        'panel': document.getElementById('panel'),
+ //        'menu': document.getElementById('menu'),
+ //        'padding': 256,
+ //        'tolerance': 70
+ //    });
 
+      // Toggle button
+    document.querySelector('.toggle-button').addEventListener('click', function() {
+        slideout.toggle();
+    });
+
+    console.log("slide out code js is workin!");
+
+
+  $('.pantwo').click(function(){
+  	$('.picture-theater').addClass('activ');
+  });
+
+  $(body).addClass("cbp-spmenu-push");
 
 	
 });
 
-
-console.log("kjskljlakjlkjsdlj");

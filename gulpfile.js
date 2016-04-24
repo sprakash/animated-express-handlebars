@@ -7,6 +7,11 @@ var webserver = require('gulp-webserver');
 var sassbeautify = require('gulp-sassbeautify');
 var cssbeautify = require('gulp-cssbeautify');
 var sourcemaps = require('gulp-sourcemaps');
+var livereload = require('gulp-livereload');
+
+var compass = require('gulp-compass'),
+  path = require('path');
+
 
 
 'use strict';
@@ -14,18 +19,33 @@ var sourcemaps = require('gulp-sourcemaps');
 /* To compile .scss files into css and watch for further changes */ 
 
 gulp.task('sass', function () {
-  gulp.src('sass/*.scss')
+  gulp.src('sass/**/*.scss')
    //.pipe(sourcemaps.write())
+
   .pipe(sourcemaps.init())
-   .pipe(sass.sync().on('error', sass.logError))
-   .pipe(sourcemaps.write('maps'))
-   .pipe(gulp.dest('public/css'));
+  .pipe(sass.sync().on('error', sass.logError))
+  .pipe(sourcemaps.write('maps'))
+  .pipe(gulp.dest('public/css'))
+  .pipe(livereload());
+
 });
  
 gulp.task('sass:watch', function () {
-  gulp.watch('sass/*.scss', ['sass']);
+  livereload.listen();
+  gulp.watch('sass/**/*.scss', ['sass']);
 });
 
+
+ 
+gulp.task('compass', function() {
+  gulp.src('sass/**/*.scss')
+    .pipe(compass({
+      project: path.join(__dirname, 'sass'),
+      css: 'css',
+      sass: 'sass'
+    }))
+    .pipe(gulp.dest('public/css/*.css'));
+});
 
 /* To adjust for vendor prefixing. This takes care of different browser need*/
  
