@@ -21,12 +21,7 @@
 
 /*p{background-color: black !important}
 */
-.thiso {
-  @include border-bottom-left-radius(25px);
-  background-color: red; 
-  width:50px; 
-  height: 50px
-}
+
 html, body {
   height: 100%;
   width: 100%;
