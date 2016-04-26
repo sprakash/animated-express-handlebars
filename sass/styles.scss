@@ -19,27 +19,32 @@
   }
 }
 
-/*p{background-color: black !important}
-*/
-
 html, body {
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
- @include respond-to(wide-screens){overflow: hidden;
-  overflow-x:hidden; overflow-y:hidden}
-
   background-color: grey;
-  min-width:350px
+  min-width:350px;
+
+  @include respond-to(wide-screens){
+    overflow: hidden;
+    overflow-x:hidden; overflow-y:hidden
+  }
 }
 
-.container.music { background-color: red
+.container.music { 
+  background-color: red
 }
   
-.row{margin:0;}
+.row{
+  margin:0;
+}
 
-.container.home{overflow-x: hidden; overflow:hidden; }
+.container.home{
+  overflow-x: hidden; 
+  overflow:hidden; 
+}
 
 .navbar .container-fluid {
   margin-bottom: 10px;
@@ -71,33 +76,7 @@ html, body {
 
 .active{background-color: #ddca92 !important;}
 
-/*$type = about;
-
-@if $type == about {
-    @extend .active;  
-    @debug $type;
-  }
-*/
-
-/*body{
-  .about &{
-
-  background-color:red! important;}
-}*/
-
-/*$type: about-nav;
-
-if*/
-
-
-
 body .about{background-color: rgba(233, 150, 122, 0.2)}
-
-/*@media (min-width: 1200px) {
-  overflow: hidden;
-  overflow-y: hidden;
-}*/
-
 
 .home .col-lg-3, .home .col-lg-12 {
   margin: 0;
@@ -144,10 +123,12 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .perspective-container {
   perspective: 20em;
-  @include respond-to(wide-screens){  overflow: hidden;
-}
- height: 100%;
+  height: 100%;
   transform-style: preserve-3d;
+
+  @include respond-to(wide-screens){  
+    overflow: hidden;
+  }
 }
 
 .picture-title {
@@ -160,9 +141,6 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   letter-spacing: 0.4em;
   font-weight: 100;
   cursor: pointer;
-
-  /*  border-bottom:2px solid $panel_title_color;
-  */
 }
 
 .panel-description {
@@ -170,23 +148,24 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   position: absolute;
   z-index: 4;
   width: 300px;
-
   top: 10px;
   padding-top: 30px;
   margin: 10px;
-  p{color:#ddd;}
-  /*  background-color: rgba(91, 190, 251, 0.4);*/
 
+  p{
+    color:#ddd;
+  }
+
+  /*  background-color: rgba(91, 190, 251, 0.4);*/
   /*rgba(255, 255, 255, 0.4);*/
-  @include respond-to(handhelds){width: 70%;
-    height: 80%; font-size: 80%;}
+
   .description-content {
     padding: 17px 30px 30px 40px;
-/*    color: black;
-*/    font-weight: 100;
+    font-weight: 100;
     letter-spacing: 0.05em;
     text-shadow: none !important;
   }
+
   a.info {
     display: inline-block;
     text-decoration: none;
@@ -196,15 +175,15 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     background: rgba(0, 0, 0, 0.9);
     color: #fff;
     text-transform: uppercase;
+  }
 
-    /*-webkit-box-shadow: 0 0 1px #000;
-    -moz-box-shadow: 0 0 1px #000;
-    box-shadow: 0 0 1px #000;*/
+  @include respond-to(handhelds){
+    width: 70%;
+    height: 80%; font-size: 80%;
   }
 }
 
 .hide-photo-filter {
-
   display: none;
   position: relative;
   top: 0;
@@ -216,21 +195,25 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .show-photo-filter {
 
-  @include respond-to(wide-screens){display: block;}
- /* width:100%;
-  height:100%;*/
+  @include respond-to(wide-screens){
+    display: block;
+  }
+
 }
 
 .activ {
-    -webkit-animation-delay: 0.3s;
-    -moz-animation-delay: 0.3s;
-    animation-delay: 0.3s;
-    color: $panel_title_color;
-  }
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  color: $panel_title_color;
+}
+
+
 
 /* Home Page Animation for panels */
 
 @for $i from 1 through length($titles) {
+
   $item: nth($titles, $i);
   $pcol: nth($panel-desc-colors, $i);
 
@@ -269,27 +252,13 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     }
   }
 }
-/*.scrollbar{
-    cursor:n-resize;
-    position:absolute;
-    overflow:auto;
-    top:0px;
-    right:0px;
-    z-index:2;
-    background:#444;
-    width:17px;
-    border-radius:8px;
-}
-.scrollable{
-    overflow-y:scroll;
-    position:absolute;
-    padding:0 17px 0 0;
-    width: 180px;
-    height:100%;
-}*/
+
+
+
 /*  About Page animation for content  */
 
- @for $i from 1 through length($content) {
+@for $i from 1 through length($content) {
+
   $item: nth($content, $i);
 
   /* Generates animations for content to slide in from right */
@@ -304,13 +273,14 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .container.about{
   background-color:white;
+  padding-bottom:100px;
+
   @include respond-to(wide-screens){ 
     overflow-x: hidden; 
     overflow-y: auto;
     height: 100vh;
-  } 
- 
-  padding-bottom:100px}
+  }
+}
 
 .about-panel {
   -webkit-animation: example 1.2s both ease-in;
@@ -330,15 +300,12 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   overflow:hidden; 
   height: calc(100% + 900px);
   padding: 0;
-
-/*  position: absolute; top:0;right:0;
-*/
-@include respond-to(wide-screens){
+  
+  @include respond-to(wide-screens){
     position: absolute; top:0;right:0;
     float:right; 
     padding-left:50px;
-
-}
+  }
 }
 
 .about-content{
@@ -346,8 +313,6 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   float:left;
   overflow-x: hidden; overflow:hidden;
   padding-top:30px;
-  @include respond-to(handhelds){padding-left:40px; padding-right: 40px}
-  @include respond-to(wide-screens){padding: 20px 0px 20px 50px;}
   color:#424649;
 
   p, blockquote{
@@ -367,6 +332,15 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
     padding-bottom: 35px; 
     width: 95%;
   } /* or letter-spacing:0.15; -0.01*/
+
+  @include respond-to(handhelds){
+    padding-left:40px; 
+    padding-right: 40px
+  }
+
+  @include respond-to(wide-screens){
+    padding: 20px 0px 20px 50px;
+  }
   
 }
 
@@ -395,11 +369,11 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   text-align: center;
   width: 100%;
 
-
   h3{
     width: 100%; 
     font-size: 30px; 
-border-bottom:4px solid white;    letter-spacing: 0.4em; 
+    border-bottom:4px solid white;    
+    letter-spacing: 0.4em; 
     font-weight:500;
   }
 
@@ -408,7 +382,10 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
     padding-bottom: 100px;
     margin-bottom: 100px; 
     height: 130px;
-    @include respond-to(wide-screens){display:none;}
+
+    @include respond-to(wide-screens){
+      display:none;
+    }
 
     h4, a{
       margin-bottom: 5px;
@@ -428,15 +405,22 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
       font-size: 16px;
     }
   }
-
 }
 
-.about-me{margin: 3% auto;
+.about-me{
+  margin: 3% auto;
   text-align: justify;
   font-weight: 300;
-  p{line-height: 23px}
-  row{height:100vh}
-  @include respond-to(wide-screens){width: 63%;}
+
+  p{
+    line-height: 23px
+  }
+  row{
+    height:100vh
+  }
+  @include respond-to(wide-screens){
+    width: 63%;
+  }
 
 
 }
@@ -484,8 +468,7 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
 */
 @keyframes opaqu {
   0% {
-/*    opacity: 0.2;
-*/    color: black;
+    color: black;
   }
 
   50% {
@@ -573,20 +556,26 @@ border-bottom:4px solid white;    letter-spacing: 0.4em;
     border-radius:50%;
     background-color:rgba(255,255,255,0.2);
     margin:10px; 
-box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
-
-/*    padding:5px; 
-*/   /* line-height:40px; */font-weight: 600;
-
-    color:white;
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
+    font-weight: 600;
+    color: white;
     text-decoration: none;
-    cursor:pointer; 
-    text-align:center;display:block;
+    cursor: pointer; 
+    text-align:center;
+    display:block;
   }
 }
 
 
-.mobile-buttons a span {display:block; width: 15px; background-color:white; height:1px; position:relative;margin: 0 auto;}
+.mobile-buttons a span {
+  display:block; 
+  width: 15px; 
+  background-color:white; 
+  height:1px; 
+  position:relative;
+  margin: 0 auto;
+}
+
 .next{
   span:nth-of-type(1){
     -ms-transform: rotate(40deg); 
@@ -601,23 +590,13 @@ box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
   }
 
 }
+
 .previous{
   @extend .next;
   -ms-transform: scale(-1); 
   -webkit-transform: scale(-1);
   transform: scale(-1)
 }
-
-
-/*@media (max-width: 800px) {
-  .photo{
-    width:100% !important;
-  }
-}*/
-
- 
-/*.about{ @include respond-to(handhelds){overflow-x: scroll; overflow-y:scroll !important; overflow:scroll !important;}}
-*/
 
 .navbar-nav {
   ul li a {
@@ -628,14 +607,40 @@ box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
 
 .navbar-right{
   display:none !important;
-   @include respond-to(wide-screens){display:block !important;}
+
+  @include respond-to(wide-screens){
+    display:block !important;
+  }
 }
 
-.mobile-nav ul li{float:none !important; padding-left: 5px}
+.mobile-nav ul li{
+  float:none !important; 
+  padding-left: 5px
+}
 
 
 .mobile-nav{
-  .nav-name, .navbar-nav {display: inline-block};
+
+  .nav-name, .navbar-nav {
+    display: inline-block
+  }
+
+  @for $i from 1 through length($mobile-nav-titles) {
+
+  $ite: nth($mobile-nav-titles, $i);
+
+    /* Generates animations for cascading tiles */
+
+    ul .#{$ite}-nav a {
+      -webkit-animation-delay: #{$i * 0.06s};
+      -moz-animation-delay: #{$i * 0.06s};
+      animation-delay: #{$i * 0.06s};
+      animation-timing-function: ease;
+      @debug #{$i * 0.07s} $ite;
+     
+    }
+  }
+
   .mobile-navbar-toggle {
     width: 50px; 
     height: 50px;
@@ -644,31 +649,32 @@ box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
     border-radius: 50%;
     padding: 10px !important;
 
-      @media (min-width: 600px){
-        .navbar-toggle {
-          display: initial !important;
-         }
-      }
-      span{
-        
-        width: 28px !important;
-        font-size: 0.75em;
-        border-radius:2px;
-        height: 3px;
-
-      }
-      span:nth-of-type(2){
-        -ms-transform: rotate(40deg); /* IE 9 */
-        -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
-        transform: rotate(40deg);
-      }
-      span:nth-of-type(3){
-        -ms-transform: rotate(-40deg); /* IE 9 */
-        -webkit-transform: rotate(-40deg); /* Chrome, Safari, Opera */
-        transform: rotate(-40deg);
-        margin-top: -3px;
-
-      }
+    @media (min-width: 600px){
+      .navbar-toggle {
+        display: initial !important;
+       }
     }
-  
+    span{
+      
+      width: 28px !important;
+      font-size: 0.75em;
+      border-radius:2px;
+      height: 3px;
+
+    }
+    span:nth-of-type(2){
+      -ms-transform: rotate(40deg); /* IE 9 */
+      -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+      transform: rotate(40deg);
+    }
+    span:nth-of-type(3){
+      -ms-transform: rotate(-40deg); /* IE 9 */
+      -webkit-transform: rotate(-40deg); /* Chrome, Safari, Opera */
+      transform: rotate(-40deg);
+      margin-top: -3px;
+
+    }
+  }  
 }
+
+

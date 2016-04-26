@@ -116,10 +116,10 @@ $(function(){
 
 	$(".toggle-button").click(function(){
 	    if($("#cbp-spmenu-s1").hasClass("cbp-spmenu-open")==true){
-	        $(".mobile-nav>ul>li>a").addClass("animated fadeInLeft");
+	        $(".mobile-nav>ul>li>a").addClass("animated fadeInUp");
 		}
 		else {
-			$(".mobile-nav>ul>li>a").removeClass("animated fadeInLeft");
+			$(".mobile-nav>ul>li>a").removeClass("animated fadeInUp");
 		};
 	});
 
