@@ -2084,80 +2084,112 @@ body .about {
 }
 /* line 624, ../../sass/styles.scss */
 .mobile-nav .nav-name, .mobile-nav .navbar-nav {
-  display: inline-block;
+  display: block;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 625, ../../sass/styles.scss */
+.mobile-nav .nav-name a, .mobile-nav .navbar-nav a {
+  color: black;
+}
+/* line 628, ../../sass/styles.scss */
+.mobile-nav li a {
+  padding: 7px 15px;
+}
+/* line 630, ../../sass/styles.scss */
+.mobile-nav .nav-name {
+  width: 100%;
+  float: right;
+}
+/* line 630, ../../sass/styles.scss */
+.mobile-nav .nav-name a h4 {
+  font-weight: 600 !important;
+  letter-spacing: 0.05em;
+}
+/* line 631, ../../sass/styles.scss */
+.mobile-nav .navbar-nav {
+  float: left;
+}
+/* line 631, ../../sass/styles.scss */
+.mobile-nav .navbar-nav li a {
+  font-weight: 600 !important;
+}
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .home-nav a {
   -webkit-animation-delay: 0.06s;
   -moz-animation-delay: 0.06s;
   animation-delay: 0.06s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .film-nav a {
   -webkit-animation-delay: 0.12s;
   -moz-animation-delay: 0.12s;
   animation-delay: 0.12s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .theater-nav a {
   -webkit-animation-delay: 0.18s;
   -moz-animation-delay: 0.18s;
   animation-delay: 0.18s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .music-nav a {
   -webkit-animation-delay: 0.24s;
   -moz-animation-delay: 0.24s;
   animation-delay: 0.24s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .code-nav a {
   -webkit-animation-delay: 0.3s;
   -moz-animation-delay: 0.3s;
   animation-delay: 0.3s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .about-nav a {
   -webkit-animation-delay: 0.36s;
   -moz-animation-delay: 0.36s;
   animation-delay: 0.36s;
   animation-timing-function: ease;
 }
-/* line 634, ../../sass/styles.scss */
+/* line 639, ../../sass/styles.scss */
 .mobile-nav ul .contact-nav a {
   -webkit-animation-delay: 0.42s;
   -moz-animation-delay: 0.42s;
   animation-delay: 0.42s;
   animation-timing-function: ease;
 }
-/* line 644, ../../sass/styles.scss */
+/* line 649, ../../sass/styles.scss */
+.mobile-nav .mobile-navbar-toggle:hover {
+  background-color: transparent !important;
+}
+/* line 650, ../../sass/styles.scss */
 .mobile-nav .mobile-navbar-toggle {
-  width: 50px;
-  height: 50px;
-  line-height: 50px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
   text-align: center;
-  border-radius: 50%;
+  border: none;
+  background-color: none !important;
   padding: 10px !important;
+  margin-right: 25px;
 }
 @media (min-width: 600px) {
-  /* line 653, ../../sass/styles.scss */
+  /* line 662, ../../sass/styles.scss */
   .mobile-nav .mobile-navbar-toggle .navbar-toggle {
     display: initial !important;
   }
 }
-/* line 657, ../../sass/styles.scss */
+/* line 666, ../../sass/styles.scss */
 .mobile-nav .mobile-navbar-toggle span {
-  width: 28px !important;
+  width: 20px !important;
   font-size: 0.75em;
   border-radius: 2px;
   height: 3px;
 }
-/* line 665, ../../sass/styles.scss */
+/* line 674, ../../sass/styles.scss */
 .mobile-nav .mobile-navbar-toggle span:nth-of-type(2) {
   -ms-transform: rotate(40deg);
   /* IE 9 */
@@ -2165,7 +2197,7 @@ body .about {
   /* Chrome, Safari, Opera */
   transform: rotate(40deg);
 }
-/* line 670, ../../sass/styles.scss */
+/* line 679, ../../sass/styles.scss */
 .mobile-nav .mobile-navbar-toggle span:nth-of-type(3) {
   -ms-transform: rotate(-40deg);
   /* IE 9 */
@@ -2175,25 +2207,25 @@ body .about {
   margin-top: -3px;
 }
 
-/* line 680, ../../sass/styles.scss */
+/* line 689, ../../sass/styles.scss */
 .mobile-nav-about {
   position: absolute;
   bottom: 0% !important;
   top: initial;
 }
-/* line 684, ../../sass/styles.scss */
+/* line 693, ../../sass/styles.scss */
 .mobile-nav-about p, .mobile-nav-about a {
   font-size: 12px !important;
 }
-/* line 687, ../../sass/styles.scss */
+/* line 696, ../../sass/styles.scss */
 .mobile-nav-about .role {
   font-weight: 400 !important;
 }
-/* line 688, ../../sass/styles.scss */
+/* line 697, ../../sass/styles.scss */
 .mobile-nav-about .location {
   font-weight: 300 !important;
 }
-/* line 689, ../../sass/styles.scss */
+/* line 698, ../../sass/styles.scss */
 .mobile-nav-about .about-info-contact {
   margin-top: 25px;
   padding-bottom: 25px;
