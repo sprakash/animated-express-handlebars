@@ -1193,9 +1193,9 @@ body.has-active-menu {
   -webkit-transition: all 0.3s ease;
   -moz-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  -webkit-transform: translateZ(0);
+  /*-webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
-  transform: translateZ(0);
+  transform: translateZ(0);*/
 }
 
 /* Example media queries */
