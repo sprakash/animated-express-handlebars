@@ -2174,3 +2174,28 @@ body .about {
   transform: rotate(-40deg);
   margin-top: -3px;
 }
+
+/* line 680, ../../sass/styles.scss */
+.mobile-nav-about {
+  position: absolute;
+  bottom: 0% !important;
+  top: initial;
+}
+/* line 684, ../../sass/styles.scss */
+.mobile-nav-about p, .mobile-nav-about a {
+  font-size: 12px !important;
+}
+/* line 687, ../../sass/styles.scss */
+.mobile-nav-about .role {
+  font-weight: 400 !important;
+}
+/* line 688, ../../sass/styles.scss */
+.mobile-nav-about .about-info-contact {
+  margin-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 100%;
+  margin-bottom: 1%;
+  text-align: left;
+}

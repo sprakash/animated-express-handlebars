@@ -677,4 +677,22 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }  
 }
 
+ .mobile-nav-about{
+  position:absolute; 
+  bottom:0% !important; 
+  top:initial; 
+  p, a {
+    font-size: 12px !important
+  }
+  .role{font-weight: 400 !important}
+  .about-info-contact{
+    margin-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px; padding-right: 20px;
+    height: 100%; 
+    margin-bottom: 1%;
+    text-align: left
+  }
+ }
+
 
