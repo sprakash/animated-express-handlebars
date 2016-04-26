@@ -2190,6 +2190,10 @@ body .about {
   font-weight: 400 !important;
 }
 /* line 688, ../../sass/styles.scss */
+.mobile-nav-about .location {
+  font-weight: 300 !important;
+}
+/* line 689, ../../sass/styles.scss */
 .mobile-nav-about .about-info-contact {
   margin-top: 25px;
   padding-bottom: 25px;
