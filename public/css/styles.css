@@ -303,6 +303,18 @@ font on selected : dimgrey*/
   content: initial !important;
 }
 
+@media (min-width: 834px) {
+  /* line 42, ../../sass/_overide.scss */
+  .navbar-toggle {
+    display: none !important;
+  }
+}
+@media (min-width: 600px) {
+  /* line 48, ../../sass/_overide.scss */
+  #close-nav.navbar-toggle {
+    display: initial !important;
+  }
+}
 /* -----------------------------------------------------------------------------
 
   FONTS
@@ -1077,7 +1089,7 @@ body.has-active-menu {
 /* Orientation-dependent styles for the content of the menu */
 /* line 34, ../../sass/slideMenu/_component.scss */
 .cbp-spmenu-vertical {
-  width: 240px;
+  width: 300px;
   height: 100%;
   top: 0;
   z-index: 1000;
@@ -1087,7 +1099,7 @@ body.has-active-menu {
 .cbp-spmenu-vertical a {
   /*	border-bottom: 1px solid #258ecd;
   */
-  padding: 1em;
+  /*padding: 1em;*/
 }
 
 /* line 46, ../../sass/slideMenu/_component.scss */
@@ -1117,7 +1129,7 @@ body.has-active-menu {
 /* Vertical menu that slides from the left or right */
 /* line 69, ../../sass/slideMenu/_component.scss */
 .cbp-spmenu-left {
-  left: -240px;
+  left: -300px;
 }
 
 /* line 73, ../../sass/slideMenu/_component.scss */
@@ -2121,4 +2133,49 @@ body .about {
 /* line 634, ../../sass/styles.scss */
 .mobile-nav ul li {
   float: none !important;
+  padding-left: 5px;
+}
+
+/* line 638, ../../sass/styles.scss */
+.mobile-nav .nav-name, .mobile-nav .navbar-nav {
+  display: inline-block;
+}
+/* line 639, ../../sass/styles.scss */
+.mobile-nav .mobile-navbar-toggle {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  padding: 10px !important;
+}
+@media (min-width: 600px) {
+  /* line 648, ../../sass/styles.scss */
+  .mobile-nav .mobile-navbar-toggle .navbar-toggle {
+    display: initial !important;
+  }
+}
+/* line 652, ../../sass/styles.scss */
+.mobile-nav .mobile-navbar-toggle span {
+  width: 28px !important;
+  font-size: 0.75em;
+  border-radius: 2px;
+  height: 3px;
+}
+/* line 660, ../../sass/styles.scss */
+.mobile-nav .mobile-navbar-toggle span:nth-of-type(2) {
+  -ms-transform: rotate(40deg);
+  /* IE 9 */
+  -webkit-transform: rotate(40deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(40deg);
+}
+/* line 665, ../../sass/styles.scss */
+.mobile-nav .mobile-navbar-toggle span:nth-of-type(3) {
+  -ms-transform: rotate(-40deg);
+  /* IE 9 */
+  -webkit-transform: rotate(-40deg);
+  /* Chrome, Safari, Opera */
+  transform: rotate(-40deg);
+  margin-top: -3px;
 }

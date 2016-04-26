@@ -1,4 +1,3 @@
-
 $(function(){
 
 
@@ -37,8 +36,8 @@ $(function(){
 	var height = movementStrength / $(window).height();
 	var width = movementStrength / $(window).width();
 	
-		$(".photo").mousemove(function(e){
-			if ($(window).width() > 960){
+	$(".photo").mousemove(function(e){
+		if ($(window).width() > 960){
 			var pageX = e.pageX - ($(window).width() / 2);
 			var pageY = e.pageY - ($(window).height() / 2);
 			var newvalueX = width * pageX * -1 - 25;
@@ -49,7 +48,7 @@ $(function(){
 
 			$(this).css("background-size", "cover");
 		};
-		});
+	});
 	
 
 		// $(".next").click(function(){
@@ -101,34 +100,32 @@ $(function(){
 	// 	// });
 
 
-	// 	console.log(this_panel);
-	// 	// $("."+ val + "-panel").mouseout(function(){
-	// 	// 	$(this).unbind("hover").css("p","red");
 
-	// 	// })
-	// });
-
-	// var slideout = new Slideout({
- //        'panel': document.getElementById('panel'),
- //        'menu': document.getElementById('menu'),
- //        'padding': 256,
- //        'tolerance': 70
- //    });
-
-      // Toggle button
+    // Toggle button
     document.querySelector('.toggle-button').addEventListener('click', function() {
         slideout.toggle();
     });
 
     console.log("slide out code js is workin!");
 
+  	$('.pantwo').click(function(){
+  		$('.picture-theater').addClass('activ');
+  	});
 
-  $('.pantwo').click(function(){
-  	$('.picture-theater').addClass('activ');
-  });
+  	$(body).addClass("cbp-spmenu-push");
 
-  $(body).addClass("cbp-spmenu-push");
+	$(".toggle-button").click(function(){
+	    if($("#cbp-spmenu-s1").hasClass("cbp-spmenu-open")==true){
+	        $(".mobile-nav>ul>li>a").addClass("animated fadeInLeft");
+		}
+		else {
+			$(".mobile-nav>ul>li>a").removeClass("animated fadeInLeft");
+		};
+	});
 
-	
+	$("#close-nav").click(function(){
+		$(".cbp-spmenu-left").removeClass("cbp-spmenu-open");
+	});
+
 });
 

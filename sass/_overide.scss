@@ -37,3 +37,15 @@
      content: initial !important
      
 }
+
+@media (min-width: 834px){
+    .navbar-toggle {
+        display: none !important;
+    }
+}
+
+@media (min-width: 600px){
+    #close-nav.navbar-toggle {
+        display: initial !important;
+    }
+}
