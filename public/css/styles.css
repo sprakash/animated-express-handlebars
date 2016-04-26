@@ -1190,9 +1190,9 @@ body.has-active-menu {
 /* line 121, ../../sass/slideMenu/_component.scss */
 .cbp-spmenu,
 .cbp-spmenu-push {
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
 }
 
 /* Example media queries */
@@ -2219,7 +2219,7 @@ body .about {
 }
 /* line 696, ../../sass/styles.scss */
 .mobile-nav-about .role {
-  font-weight: 400 !important;
+  font-weight: 500 !important;
 }
 /* line 697, ../../sass/styles.scss */
 .mobile-nav-about .location {
