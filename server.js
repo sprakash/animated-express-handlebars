@@ -52,7 +52,7 @@ app.get('/about', function(req, res){
 app.use('/public', express.static('public'));
 hbs.registerPartials(__dirname + '/views/partials');
 
-
+// test
 
 var port = Number(process.env.PORT || 8080);
 app.listen(port, function(){
