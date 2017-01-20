@@ -43,7 +43,7 @@ $(function(){
 			var newvalueX = width * pageX * -1 - 25;
 			var newvalueY = height * pageY * -1 - 25;
 			// $(this).css("transform","translate("+ newvalueX+"px, " +newvalueY+"px)");
-			$(this).css("transform","translate("+ newvalueX+"px, " +newvalueY+"px)");
+			$(this).css("transform","translate3d("+ newvalueX+"px, " +newvalueY+"px, 0)");
 			// $(this).css({"transform":"matrix(1 2 3 "+ newvalueX+" "+newvalueY, "-moz-transform":"matrix(1 2 3 "+ newvalueX+" "+newvalueY});
 
 			$(this).css("background-size", "cover");

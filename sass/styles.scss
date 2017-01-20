@@ -705,4 +705,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   }
  }
 
+.perspective-container{
+  transform:matrix(1, 0, 0, 1, 0, 0) !important
+}
+
 

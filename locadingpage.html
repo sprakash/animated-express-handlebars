@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="public/css/pageloader.css">
+</head>
+<body>
+
+<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+</div>
+<div class="content">
+  <h1>Some Pixabay Pictures</h1>
+  <img src="https://pixabay.com/static/uploads/photo/2014/11/13/23/34/london-530055_960_720.jpg"/>
+  <img src="https://pixabay.com/static/uploads/photo/2016/03/16/00/52/koala-1259681_960_720.jpg"/>
+  <img src="https://pixabay.com/static/uploads/photo/2016/03/16/00/52/koala-1259681_960_720.jpg"/>
+</div>
+<script type="text/javascript" src="public/bower_components/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript">
+
+	setTimeout(function(){
+	    $('body').addClass('loaded');
+	}, 3);
+
+	console.log("hi!");
+
+</script>
+
+
+</body>
+</html>
