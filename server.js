@@ -17,33 +17,27 @@ app.get('/', function(req, res){
 });
 
 app.get('/film', function(req, res){
+	var user = {};
 	res.render('film')
 });
 
 app.get('/theater', function(req, res){
-	res.render('theater')
+	var user = {};
+	res.render('theater', user)
 });
 
 app.get('/music', function(req, res){
-
-	var there = {
-    	firstt: 'active'
-   	}
-   	
-	res.render('music', there)
+	var user = {}  	
+	res.render('music', user)
 });
 
 app.get('/code', function(req, res){
-	res.render('code')
+	var user = {};
+	res.render('code', user)
 });
 
 app.get('/about', function(req, res){
-	var user = {
-    first: 'active',
-    last: 'Mancini',
-    site: 'http://derpturkey.com',
-    age: 32
-  }
+	var user = {};
 	res.render('about',user)
 });
 

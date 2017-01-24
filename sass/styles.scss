@@ -34,7 +34,7 @@ html, body {
 }
 
 .container.music { 
-  background-color: red
+  background-color: green;
 }
   
 .row{
@@ -290,7 +290,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
 
 .about .photo-about{
   position:relative; 
-  top:0; height: 100vh !important; 
+  top:0; 
+  height: 100vh !important; 
   background-size: cover;
 }
 
@@ -433,7 +434,7 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
   $item: nth($moveup, $i);
   height: 100%;
 
-    &:hover{
+   /* &:hover{*/
 
       .about-info-contact{
         display:block;
@@ -450,8 +451,8 @@ body .about{background-color: rgba(233, 150, 122, 0.2)}
         transition-timing-function: cubic-bezier(0.42,0,0.58,1);
         display:block;
       }
-    }
-  }
+    /*}
+*/  }
 }
 
 
