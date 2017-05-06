@@ -1,0 +1,51 @@
+/*Overiding bootstrap*/
+
+.navbar-default .navbar-nav > li > a {
+    color: black;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+    color: black;
+    border-bottom: 3px solid black;
+    background-color: none !important;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background-color: none !important;
+}
+
+.navbar .hvr-underline-from-left:before {
+    background: black;
+    text-align: center;
+}
+
+.info.hvr-underline-from-left:before {
+    background-color: $panel_title_color;
+    height: 2.5px;
+}
+
+.navbar{background-color: whitesmoke !important}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{background-color: transparent !important; border:0 !important;}
+
+.ui-overlay-a, .ui-page-theme-a, .ui-page-theme-a .ui-panel-wrapper {text-shadow: none !important}
+
+.mobile-nav .hvr-underline-from-left:before {
+     content: initial !important
+     
+}
+
+@media (min-width: 834px){
+    .navbar-toggle {
+        display: none !important;
+    }
+}
+
+@media (min-width: 600px){
+    #close-nav.navbar-toggle {
+        display: initial !important;
+    }
+}

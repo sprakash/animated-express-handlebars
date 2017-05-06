@@ -1,0 +1,713 @@
+@import "compass/css3";
+@import "filmslide";
+@import "preloader";
+@import "variables";
+@import "mixins";
+@import "overide";
+@import "menu/styletwo";
+@import "slideMenu/component";
+/*@import "slideMenu/default";
+*/
+
+@each $author in $list {
+  .photo-#{$author} {
+    background: url("../images/#{$author}.jpg") no-repeat center center;
+    background-size: cover;
+    z-index: 45;
+     @include color-interpolation-filters( linearRGB);
+
+  }
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: grey;
+  min-width:350px;
+
+  @include respond-to(wide-screens){
+    overflow: hidden;
+    overflow-x:hidden; overflow-y:hidden
+  }
+}
+
+.container.music { 
+  background-color: green;
+}
+  
+.row{
+  margin:0;
+}
+
+.container.home{
+  overflow-x: hidden; 
+  overflow:hidden; 
+}
+
+.navbar .container-fluid {
+  margin-bottom: 10px;
+  border-bottom: 0.5px solid #b9b9b9;
+}
+
+.navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-top-width: 0;
+
+  h4 {
+    font-size: 24px;
+    padding: 5px;
+  }
+}
+
+.navbar-brand, .navbar-nav {
+  color: black !important;
+  padding: 0px 15px;
+  line-height: 23px;
+}
+
+.navbar-nav {
+  ul li a {
+    padding-left: 100px;
+    background-color: transparent !important;
+  }
+}
+
+.active{background-color: #ddca92 !important;}
+
+body .about{background-color: rgba(233, 150, 122, 0.2)}
+
+.home .col-lg-3, .home .col-lg-12 {
+  margin: 0;
+  padding: 0;
+  height: calc(100% + 900px);
+  overflow: hidden;
+}
+
+.home .col-lg-3 {
+  height: 100%;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.code-container {
+  -webkit-animation: 4s ease 3 normal;
+  animation: mymove 5s;
+  -webkit-animation: movearound 4s ease 3 normal;
+}
+
+ .photo {
+  z-index: 0;
+  top: 0px;
+  background-size: cover;
+  height: calc(100% + 50px) !important;
+  width: calc(100% + 50px);
+  overflow: hidden;
+  z-index: 3;
+  position: absolute;
+}
+
+.photo {
+  animation: frameani 2s ease-in-out infinite alternate;
+  overflow: hidden;
+  transition: all 1s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+  top: 0;
+}
+
+.perspective-container {
+  perspective: 20em;
+  height: 100%;
+  transform-style: preserve-3d;
+
+  @include respond-to(wide-screens){  
+    overflow: hidden;
+  }
+}
+
+.picture-title {
+  position: absolute;
+  top: 10px;
+  left: 50px;
+  z-index: 30;
+  text-align: center;
+  font-size: 27px;
+  letter-spacing: 0.4em;
+  font-weight: 100;
+  cursor: pointer;
+}
+
+.panel-description {
+  display: none;
+  position: absolute;
+  z-index: 4;
+  width: 300px;
+  top: 10px;
+  padding-top: 30px;
+  margin: 10px;
+
+  p{
+    color:#ddd;
+  }
+
+  /*  background-color: rgba(91, 190, 251, 0.4);*/
+  /*rgba(255, 255, 255, 0.4);*/
+
+  .description-content {
+    padding: 17px 30px 30px 40px;
+    font-weight: 100;
+    letter-spacing: 0.05em;
+    text-shadow: none !important;
+  }
+
+  a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    font-weight: 200;
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  @include respond-to(handhelds){
+    width: 70%;
+    height: 80%; font-size: 80%;
+  }
+}
+
+.hide-photo-filter {
+  display: none;
+  position: relative;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 50;
+  width: 100%;
+  height: 100%;
+}
+
+.show-photo-filter {
+
+  @include respond-to(wide-screens){
+    display: block;
+  }
+
+}
+
+.activ {
+  -webkit-animation-delay: 0.3s;
+  -moz-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+  color: $panel_title_color;
+}
+
+
+
+/* Home Page Animation for panels */
+
+@for $i from 1 through length($titles) {
+
+  $item: nth($titles, $i);
+  $pcol: nth($panel-desc-colors, $i);
+
+  /* Generates animations for cascading tiles */
+
+  .picture-#{$item} {
+    -webkit-animation-delay: #{$i * 0.3s};
+    -moz-animation-delay: #{$i * 0.3s};
+    animation-delay: #{$i * 0.3s};
+    color: $panel_title_color;
+  }
+
+  /* Generates different colors for panel descriptions */
+
+  .#{$item}-panel {
+    cursor: pointer;
+    .panel-description {
+      background-color: $pcol;
+      text-align: left;
+      p{
+        @include respond-to(handhelds){font-weight: 300}
+      }
+    }
+
+    @include respond-to(handhelds){.panel-description{display:block}}
+
+    &:hover {
+      .panel-description {
+        display: block;
+      }
+
+      .hide-photo-filter {
+
+        @extend .show-photo-filter;
+      }
+    }
+  }
+}
+
+
+
+/*  About Page animation for content  */
+
+@for $i from 1 through length($content) {
+
+  $item: nth($content, $i);
+
+  /* Generates animations for content to slide in from right */
+
+  .#{$item} {
+    -webkit-animation-delay: #{$i * 0.08s};
+    -moz-animation-delay: #{$i * 0.08s};
+    animation-delay: #{$i * 0.08s};
+    transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+  }
+}
+
+.container.about{
+  background-color:white;
+  padding-bottom:100px;
+
+  @include respond-to(wide-screens){ 
+    overflow-x: hidden; 
+    overflow-y: auto;
+    height: 100vh;
+  }
+}
+
+.about-panel {
+  -webkit-animation: example 1.2s both ease-in;
+  -moz-animation: example 1.2s both ease-in;
+  animation: example 1.2s both ease-in;
+}
+
+.about .photo-about{
+  position:relative; 
+  top:0; 
+  height: 100vh !important; 
+  background-size: cover;
+}
+
+.about-panel{
+
+  overflow-x: hidden; 
+  overflow:hidden; 
+  height: calc(100% + 900px);
+  padding: 0;
+  
+  @include respond-to(wide-screens){
+    position: absolute; top:0;right:0;
+    float:right; 
+    padding-left:50px;
+  }
+}
+
+.about-content{
+
+  float:left;
+  overflow-x: hidden; overflow:hidden;
+  padding-top:30px;
+  color:#424649;
+
+  p, blockquote{
+    font-size:13px;
+    line-height: 20px; 
+    letter-spacing: 0.07em;
+  }
+
+  h1{
+    z-index:-1;
+    color:#ddca92; 
+    text-align:center; 
+    line-height: 50px; 
+    font-size: 90px; 
+    font-weight:200;
+    letter-spacing: -0.1em; 
+    padding-bottom: 35px; 
+    width: 95%;
+  } /* or letter-spacing:0.15; -0.01*/
+
+  @include respond-to(handhelds){
+    padding-left:40px; 
+    padding-right: 40px
+  }
+
+  @include respond-to(wide-screens){
+    padding: 20px 0px 20px 50px;
+  }
+  
+}
+
+.Synopsis-highlightLine {
+    width: 52px;
+    height: 4px;
+    background: #424649 !important; 
+    margin: 30px 0;
+    opacity:0.5 !important;
+}
+
+.Synopsis-highlight {
+    font-weight: 700 !important;
+    font-size: 15px !important;
+    opacity:0.7;
+    line-height: 25px !important;
+    width: 100%;
+}
+
+.about-info{
+
+  position: absolute;
+  z-index: 100100;
+  top:50%;
+  color: white;
+  text-align: center;
+  width: 100%;
+
+  h3{
+    width: 100%; 
+    font-size: 30px; 
+    border-bottom:4px solid white;    
+    letter-spacing: 0.4em; 
+    font-weight:500;
+  }
+
+  .about-info-contact{
+    margin-top: 25px; 
+    padding-bottom: 100px;
+    margin-bottom: 100px; 
+    height: 130px;
+
+    @include respond-to(wide-screens){
+      display:none;
+    }
+
+    h4, a{
+      margin-bottom: 5px;
+      font-weight:300
+    }
+
+    p{
+      font-size: 17px; 
+      font-weight: 100; 
+      color:#b5b5b5; 
+      margin-top: 10px; 
+      margin-bottom: 0 
+    }
+
+    a{
+      color: #b09e82; 
+      font-size: 16px;
+    }
+  }
+}
+
+.about-me{
+  margin: 3% auto;
+  text-align: justify;
+  font-weight: 300;
+
+  p{
+    line-height: 23px
+  }
+  row{
+    height:100vh
+  }
+  @include respond-to(wide-screens){
+    width: 63%;
+  }
+
+
+}
+
+
+/* Generates animations for cascading tiles */
+
+.about-panel{
+  @for $i from 1 through length($moveup) {
+  $item: nth($moveup, $i);
+  height: 100%;
+
+   /* &:hover{*/
+
+      .about-info-contact{
+        display:block;
+      }
+
+      .hide-photo-filter {
+        @extend .show-photo-filter;
+      }
+
+      .about-info-contact .#{$item} {
+        -webkit-animation-delay: #{$i * 0.08s};
+        -moz-animation-delay: #{$i * 0.08s};
+        animation-delay: #{$i * 0.08s};
+        transition-timing-function: cubic-bezier(0.42,0,0.58,1);
+        display:block;
+      }
+    /*}
+*/  }
+}
+
+
+/*@-moz-keyframes scaleUp {
+  from {
+    opacity: 0.2;
+    -moz-transform: scale(0.6);
+  }
+}
+
+*/
+
+/*p:hover{animation: opaque 2s reverse}
+*/
+@keyframes opaqu {
+  0% {
+    color: black;
+  }
+
+  50% {
+    opacity: 0.6;
+    color:grey;
+  }
+
+  100% {
+/*     opacity: 1;
+*/     color: green;
+  }
+}
+
+@-webkit-keyframes mymove {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: 200px;
+  }
+}
+
+@-webkit-keyframes mymove {
+  0% {
+    -webkit-transform: scale(0.5) rotate(15deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotate(0deg);
+  }
+}
+
+
+/*.about .about-container{overflow-y: scroll}
+*/@keyframes pop {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* scale up */
+/*@keyframes scaleUp {
+  0% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+   100% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}*/
+
+@keyframes example {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.mobile-buttons{
+
+  @include respond-to(wide-screens){display:none}
+  position: absolute; 
+  top:40%; right:15px; 
+  z-index:33333;
+
+  a{
+    width:46px; 
+    height:46px; 
+    border-radius:50%;
+    background-color:rgba(255,255,255,0.2);
+    margin:10px; 
+    box-shadow: 1px 1px 1px rgba(1, 1, 1, 0.2);
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
+    cursor: pointer; 
+    text-align:center;
+    display:block;
+  }
+}
+
+
+.mobile-buttons a span {
+  display:block; 
+  width: 15px; 
+  background-color:white; 
+  height:1px; 
+  position:relative;
+  margin: 0 auto;
+}
+
+.next{
+  span:nth-of-type(1){
+    -ms-transform: rotate(40deg); 
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+    top:16px;
+  }
+  span:nth-of-type(2){-ms-transform: rotate(40deg); 
+    -webkit-transform: rotate(-40deg); 
+    transform: rotate(-40deg);
+    top:25px;
+  }
+
+}
+
+.previous{
+  @extend .next;
+  -ms-transform: scale(-1); 
+  -webkit-transform: scale(-1);
+  transform: scale(-1)
+}
+
+.navbar-nav {
+  ul li a {
+    padding-left: 100px;
+    background-color: transparent !important;
+  }
+}
+
+.navbar-right{
+  display:none !important;
+
+  @include respond-to(wide-screens){
+    display:block !important;
+  }
+}
+
+.mobile-nav ul li{
+  float:none !important; 
+  padding-left: 5px
+}
+
+
+.mobile-nav{
+
+  .nav-name, .navbar-nav {
+    display: block; a {color:black;}
+  }
+
+  li a {padding:7px 15px }
+
+  .nav-name{width:100%; float:right; a h4{font-weight: 600 !important; letter-spacing: 0.05em} }
+  .navbar-nav{float:left; li a {font-weight:600 !important;}}
+
+  @for $i from 1 through length($mobile-nav-titles) {
+
+  $ite: nth($mobile-nav-titles, $i);
+
+    /* Generates animations for cascading tiles */
+
+    ul .#{$ite}-nav a {
+      -webkit-animation-delay: #{$i * 0.06s};
+      -moz-animation-delay: #{$i * 0.06s};
+      animation-delay: #{$i * 0.06s};
+      animation-timing-function: ease;
+      @debug #{$i * 0.07s} $ite;
+     
+    }
+  }
+
+  .mobile-navbar-toggle:hover {background-color: transparent !important}
+  .mobile-navbar-toggle {
+    width: 20px; 
+    height: 20px;
+    line-height: 20px;
+    text-align: center; 
+    border:none;
+    background-color: none !important;
+    padding: 10px !important;
+    margin-right: 25px;
+
+
+    @media (min-width: 600px){
+      .navbar-toggle {
+        display: initial !important;
+       }
+    }
+    span{
+      
+      width: 20px !important;
+      font-size: 0.75em;
+      border-radius:2px;
+      height: 3px;
+
+    }
+    span:nth-of-type(2){
+      -ms-transform: rotate(40deg); /* IE 9 */
+      -webkit-transform: rotate(40deg); /* Chrome, Safari, Opera */
+      transform: rotate(40deg);
+    }
+    span:nth-of-type(3){
+      -ms-transform: rotate(-40deg); /* IE 9 */
+      -webkit-transform: rotate(-40deg); /* Chrome, Safari, Opera */
+      transform: rotate(-40deg);
+      margin-top: -3px;
+
+    }
+  }  
+}
+
+ .mobile-nav-about{
+  position:absolute; 
+  bottom:0% !important; 
+  top:initial; 
+  p, a {
+    font-size: 12px !important;
+  }
+  .role{font-weight: 500 !important}
+  .location {font-weight: 300 !important;}
+  .about-info-contact{
+    margin-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 20px; padding-right: 20px;
+    height: 100%; 
+    margin-bottom: 1%;
+    text-align: left
+  }
+ }
+
+.perspective-container{
+  transform:matrix(1, 0, 0, 1, 0, 0) !important
+}
+
+
